@@ -1,0 +1,19 @@
+/* styles.css */
+body {
+    display: flex;
+  }
+  
+  #sidebar {
+    width: 200px; /* Width of the sidebar */
+    height: 100vh; /* Full-height */
+    background-image: '/Users/tonygong/Projects-mac/INFO5000/report/smiley.jpg'; /* Path to your image */
+    background-size: cover; /* Cover the entire sidebar */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  #main-content {
+    flex-grow: 1;
+    padding-left: 20px; /* Add some padding if needed */
+  }
+  
