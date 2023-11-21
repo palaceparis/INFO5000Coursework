@@ -1,5 +1,5 @@
 ---
-title: "寻找城市角落的紧急卫生巾站"
+title: "Finding Emergency Sanitary Pad Stations in City Corners (寻找城市角落的紧急卫生巾站)"
 author: "Group 1"
 date: "`r Sys.Date()`"
 format:
@@ -93,28 +93,44 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <div id="sidebarleft"></div>
 
+########### Contents
 
-## R Markdown
+# Introduction
+## Background and Purpose
+Introduce the necessity of emergency sanitary pad stations in urban areas, referencing the importance of accessibility and public health.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Scope of the Study
+Define the geographical and demographic scope of your research. （可提及主要的两个部分，一个是可视化，一个是小程序那里under development的那个设备，太阳能那个，提第二点时提我们有算一些东西）
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+# Methodology
 
-```{r cars}
-summary(cars)
-```
+## Data Collection
+Outline the methods used to gather data on sanitary pad dispensers, including any surveys, field studies, or database analyses.
 
-## Including Plots
+## Interactive Plot Explanation
+Describe how the interactive plot was developed and how it visualizes the data.
 
-You can also embed plots, for example (such as ):
+# Analysis of Current Situation
+## Distribution of Dispensers
+Present findings on the number and locations of sanitary pad dispensers across different districts.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+## Accessibility and Visibility
+Assess how accessible and visible these stations are to the public.
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Comparative Study
+## Benchmarking
+Compare the availability of sanitary pad dispensers in your study area with other cities or standards, if applicable.
 
-# Interactive plot
+## Lessons from Previous Studies
+Reference the "育婴室" (baby care rooms) study as a benchmark or point of comparison.
+
+# Interactive Plot Section
+## Data Visualization
+Present the interactive plot showing the distribution of sanitary pad dispensers.
+
+## Interpretation of Data
+Provide insights and trends identified from the interactive plot.
+
 
 <html lang="en">
   <head>
@@ -308,3 +324,29 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
     </script>
   </body>
 </html>
+
+# Challenges and Limitations
+## Identify Challenges
+Discuss any challenges faced in locating and assessing the sanitary pad stations.
+
+## Study Limitations
+Address any limitations of your research methods or data.
+
+# Recommendations and Future Work
+## Improving Accessibility
+Suggest ways to increase the accessibility and number of sanitary pad stations.
+
+## Policy Recommendations
+Propose policy or public health recommendations based on your findings.
+
+# Conclusion
+## Summary of Findings
+Concisely recap the key findings and insights from your study.
+
+## Closing Remarks
+Reflect on the importance of sanitary pad accessibility in urban areas.
+
+# References
+List of Sources: Include all the references and data sources used in your study.
+
+
