@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Group 1">
-<meta name="dcterms.date" content="2023-11-18">
+<meta name="dcterms.date" content="2023-11-21">
 
 <title>寻找城市角落的紧急卫生巾站</title>
 <style>
@@ -86,6 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link active" data-scroll-target="#r-markdown">R Markdown</a></li>
   <li><a href="#including-plots" id="toc-including-plots" class="nav-link" data-scroll-target="#including-plots">Including Plots</a></li>
+  <li><a href="#interactive-plot" id="toc-interactive-plot" class="nav-link" data-scroll-target="#interactive-plot">Interactive plot</a></li>
   </ul>
 </nav>
 </div>
@@ -110,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 18, 2023</p>
+      <p class="date">November 21, 2023</p>
     </div>
   </div>
   
@@ -225,6 +226,206 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</section>
+<section id="interactive-plot" class="level1">
+<h1>Interactive plot</h1>
+
+
+<meta charset="UTF-8">
+<title>
+Interactive Map with ECharts
+</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+      #mapContainer,
+      #scatterContainer {
+        width: 600px;
+        height: 400px;
+        border: 1px solid #ccc;
+        margin: 10px;
+        display: inline-block;
+      }
+    </style>
+
+
+<div id="mapContainer">
+
+</div>
+<div id="scatterContainer">
+
+</div>
+<script>
+      var mapChart = echarts.init(document.getElementById("mapContainer"));
+      var scatterChart = echarts.init(
+        document.getElementById("scatterContainer")
+      );
+
+      // Define synthetic data for map points and scatter plot
+      var mapPoints = {
+        天河区: {
+          value: [113.362, 23.1246],
+          scatter: [
+            { distance: 10, number: 3, score: 80 },
+            { distance: 3, number: 1, score: 70 },
+          ],
+        },
+        宝安区: {
+          value: [113.8831, 22.5533],
+          scatter: [
+            { distance: 10, number: 3, score: 80 },
+            { distance: 3, number: 1, score: 70 },
+            { distance: 2, number: 5, score: 40 },
+          ],
+        },
+        南山区: {
+          value: [113.9304, 22.5333],
+          scatter: [{ distance: 2, number: 5, score: 40 }],
+        },
+        福田区: {
+          value: [114.0545, 22.5229],
+          scatter: [{ distance: 2, number: 5, score: 40 }],
+        },
+      };
+
+      // Function to set scatter plot option
+      function setScatterOption(data) {
+        // Transform data for scatter plot (distance and score)
+        var transformedData = data.map(function (item) {
+          return {
+            value: [item.distance, item.score, item.number],
+            symbolSize: item.number * 10, // Adjust the multiplier as needed
+            // Additional properties for your data can go here
+          };
+        });
+
+        scatterOption = {
+          tooltip: {
+            trigger: "item",
+            axisPointer: { type: "cross" },
+            formatter: function (params) {
+              return (
+                "Distance: " +
+                params.value[0] +
+                "km<br>Score: " +
+                params.value[1]
+              );
+            },
+          },
+          xAxis: {
+            name: "Distance to Metro (km)", // Name for x-axis
+            min: 1,
+            max: 10,
+            // Additional xAxis configuration here
+          },
+          yAxis: {
+            name: "Score", // Name for y-axis
+            min: 1,
+            max: 100,
+            // Additional yAxis configuration here
+          },
+          series: [
+            {
+              data: transformedData,
+              type: "scatter",
+              symbolSize: function (val) {
+                // Scale the dot size based on the 'number' (3rd element in the array)
+                return val[2] * 10; // Adjust this multiplier as needed
+              },
+              itemStyle: {
+                color: "#1f77b4", // Change this color to make the dots visible
+              },
+              label: {
+                normal: {
+                  show: true,
+                  formatter: function (params) {
+                    // The 'number' is now directly in params.value[2]
+                    return params.value[2];
+                  },
+                  position: "inside",
+                },
+              },
+            },
+          ],
+          graphic: {
+            elements: [
+              {
+                type: "text",
+                style: {
+                  text: "Inside the dot, the number represents Quantity",
+                  fontSize: 14,
+                },
+                right: 20,
+                bottom: 20,
+              },
+            ],
+          },
+        };
+        scatterChart.setOption(scatterOption);
+      }
+
+      // Load the Guangdong GeoJSON data
+      // Correct the URL to point to the raw JSON content
+      $.getJSON(
+        "https://raw.githubusercontent.com/PalaceTony/guangdong_geojson/main/mergedfile.geojson",
+        function (geoJson) {
+          echarts.registerMap("Guangdong", geoJson);
+          // Map option
+          mapOption = {
+            tooltip: {
+              trigger: "item",
+              formatter: "{b}",
+            },
+            series: [
+              {
+                name: "Guangdong",
+                type: "map",
+                map: "Guangdong",
+                emphasis: {
+                  label: {
+                    show: true,
+                  },
+                },
+                data: Object.keys(mapPoints).map(function (district) {
+                  return { name: district, value: mapPoints[district].value };
+                }),
+                // MarkPoint for displaying points on the map
+                markPoint: {
+                  symbolSize: 10,
+                  label: {
+                    normal: {
+                      show: false, // Hide label text
+                    },
+                    emphasis: {
+                      show: false, // Hide label text on hover
+                    },
+                  },
+                  data: Object.keys(mapPoints).map(function (district) {
+                    return {
+                      name: district,
+                      coord: mapPoints[district].value,
+                    };
+                  }),
+                },
+              },
+            ],
+          };
+
+          // Apply the map option to the map chart
+          mapChart.setOption(mapOption);
+        }
+      );
+
+      // Map click event listener
+      mapChart.on("click", function (params) {
+        // Check if the click is on a markPoint
+        if (mapPoints[params.name]) {
+          setScatterOption(mapPoints[params.name].scatter);
+        }
+      });
+    </script>
+
+
 </section>
 
 </main>
