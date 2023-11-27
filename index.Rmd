@@ -186,14 +186,19 @@ Provide insights and trends identified from the interactive plot.
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       #mapContainer {
-        width: 600px; /* Adjust width as needed */
-        height: 600px; /* Adjust height as needed */
+        width: 450px; /* Adjust width as needed */
+        height: 450px; /* Adjust height as needed */
       }
       #scatterContainer {
-        width: 600px;
-        height: 600px;
-        display: inline-block;
+        width: 300px; /* Reduced width */
+        height: 300px; /* Reduced height */
+        margin-top: -65px; /* Reduce gap between map and scatter plot */
       }
     </style>
   </head>
@@ -375,6 +380,10 @@ Provide insights and trends identified from the interactive plot.
                 text: "Map of Guangzhou, Shenzhen, Foshan, and Dongguan", // Title text
                 left: "center", // Position the title in the center at the top
                 top: -2,
+                textStyle: {
+                  fontSize: 12, // Reduce font size here
+                  // Other styling options for the title can be added here
+                },
               },
               tooltip: {
                 trigger: "item",
@@ -440,7 +449,6 @@ Provide insights and trends identified from the interactive plot.
     </script>
   </body>
 </html>
-
 
 # Challenges and Limitations
 ## Identify Challenges
