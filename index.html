@@ -398,6 +398,7 @@ Interactive Map with ECharts
                 distance: item.dis,
                 number: item.number,
                 quantity: item.quantity,
+                location: item.location,
                 type: item.type.trim(),
               });
 
@@ -444,7 +445,7 @@ Interactive Map with ECharts
               groupedData[item.type] = [];
             }
             groupedData[item.type].push({
-              value: [item.distance, item.number, item.quantity],
+              value: [item.distance, item.number, item.quantity, item.location],
               symbolSize: 10,
             });
           });
@@ -453,73 +454,89 @@ Interactive Map with ECharts
 
         // Function to set scatter plot option
         function setScatterOption(data) {
-          var groupedData = groupDataByType(data);
-          var series = Object.keys(groupedData).map(function (type) {
-            return {
-              name: type,
-              type: "scatter",
-              data: groupedData[type],
-              symbolSize: 10,
-              itemStyle: {
-                color: typeToColor[type] || "#000000",
+          scatterChart.clear();
+
+          if (data.length === 0) {
+            // Display a message if there is no data
+            scatterChart.setOption({
+              title: {
+                text: "No Data Available",
+                left: "center",
+              },
+            });
+          } else {
+            var groupedData = groupDataByType(data);
+            var series = Object.keys(groupedData).map(function (type) {
+              return {
+                name: type,
+                type: "scatter",
+                data: groupedData[type],
+                symbolSize: 10,
+                itemStyle: {
+                  color: typeToColor[type] || "#000000",
+                },
+              };
+            });
+
+            scatterOption = {
+              tooltip: {
+                trigger: "item",
+                axisPointer: { type: "cross" },
+                formatter: function (params) {
+                  return (
+                    "Location: " +
+                    params.value[3] +
+                    "<br>" +
+                    "Distance: " +
+                    params.value[0] +
+                    " km<br>" +
+                    "Quantity: " +
+                    params.value[2]
+                  );
+                },
+              },
+              legend: {
+                data: Object.keys(groupedData),
+              },
+              grid: {
+                // left: "3%",
+                right: "3%",
+                bottom: "15%", // Increase the bottom margin to give more space for the x-axis label
+                containLabel: true,
+              },
+              xAxis: {
+                name: "Distance to Metro (km)",
+                nameLocation: "middle", // This ensures the label is centered
+                nameGap: 30, // Increase the gap between the x-axis label and the axis itself
+                min: 0,
+                max: 4,
+              },
+              yAxis: {
+                name: "Log of the Quantity", // Updated y-axis to represent quantity
+                nameRotate: 90, // Rotate the label 270 degrees
+                nameLocation: "middle", // Align the label in the middle of the axis
+                nameGap: 40, // Adjust the gap to move label closer or farther from the y-axis
+
+                min: 0,
+                max: 4,
+              },
+              series: series,
+              graphic: {
+                elements: [
+                  {
+                    type: "text",
+                    style: {
+                      // text: "Each dot represents a data point",
+                      fontSize: 14,
+                    },
+                    right: 20,
+                    bottom: 0,
+                  },
+                ],
               },
             };
-          });
-
-          scatterOption = {
-            tooltip: {
-              trigger: "item",
-              axisPointer: { type: "cross" },
-              formatter: function (params) {
-                return (
-                  "Distance: " +
-                  params.value[0] +
-                  " km<br>Quantity: " +
-                  params.value[2]
-                );
-              },
-            },
-            legend: {
-              data: Object.keys(groupedData),
-            },
-            grid: {
-              // left: "3%",
-              right: "3%",
-              bottom: "15%", // Increase the bottom margin to give more space for the x-axis label
-              containLabel: true,
-            },
-            xAxis: {
-              name: "Distance to Metro (km)",
-              nameLocation: "middle", // This ensures the label is centered
-              nameGap: 30, // Increase the gap between the x-axis label and the axis itself
-              min: 0,
-              max: 4,
-            },
-            yAxis: {
-              name: "Log of the Quantity", // Updated y-axis to represent quantity
-              nameRotate: 90, // Rotate the label 270 degrees
-              nameLocation: "middle", // Align the label in the middle of the axis
-              nameGap: 40, // Adjust the gap to move label closer or farther from the y-axis
-
-              min: 0,
-              max: 4,
-            },
-            series: series,
-            graphic: {
-              elements: [
-                {
-                  type: "text",
-                  style: {
-                    // text: "Each dot represents a data point",
-                    fontSize: 14,
-                  },
-                  right: 20,
-                  bottom: 0,
-                },
-              ],
-            },
-          };
-          scatterChart.setOption(scatterOption);
+            scatterChart.setOption(scatterOption);
+          }
         }
 
         // Load the Guangdong GeoJSON data
@@ -544,9 +561,19 @@ Interactive Map with ECharts
                   name: "Guangdong",
                   type: "map",
                   map: "Guangdong",
-                  emphasis: {
-                    label: {
+                  label: {
+                    normal: {
+                      show: true, // Always show labels
+                      textStyle: {
+                        fontSize: 7, // Decrease the font size
+                        // Other text styling options can be added here
+                      },
+                    },
+                    emphasis: {
                       show: true,
+                      textStyle: {
+                        color: "#fff", // Text color on hover
+                      },
                     },
                   },
                   data: Object.keys(mapPoints).map(function (district) {
