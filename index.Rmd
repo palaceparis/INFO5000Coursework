@@ -101,9 +101,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <iframe src="plot.html" width="100%" height="400"></iframe>
 
-
-To write the methodology section for the interactive plot creation in your report titled "Finding Emergency Sanitary Pad Stations in City Corners", you can structure it as follows:
-
 ## Methodology of Interactive Plot Creation
 
 ### Data Collection and Preparation
