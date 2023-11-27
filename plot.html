@@ -28,13 +28,42 @@
 
       // Define synthetic data for map points and scatter plot
       var mapPoints = {
+        // 东莞
+        东莞市: {
+          value: [113.75944562477805, 23.012540905016007],
+          scatter: [
+            { distance: 0.435, number: 0.794117647, score: 9, quantity: 28 },
+            { distance: 2, number: 1, score: 24, quantity: 35 },
+          ],
+        },
+        // 佛山
+        清晖园: {
+          value: [113.25505299593833, 22.835835625709908],
+          scatter: [
+            { distance: 0.435, number: 1.609437912, score: 9, quantity: 4 },
+          ],
+        },
+        佛山科学技术学院: {
+          value: [113.26535513024123, 22.863909059295835],
+          scatter: [
+            { distance: 1.2, number: 1.945910149, score: 9, quantity: 6 },
+          ],
+        },
+        德胜学校: {
+          value: [113.2928170051754, 22.793841599724644],
+          scatter: [
+            { distance: 3, number: 1.386294361, score: 9, quantity: 6 },
+          ],
+        },
+        // 广州
         天河区: {
           value: [113.362, 23.1246],
           scatter: [
-            { distance: 10, number: 3, score: 80 },
+            { distance: 126, number: 3, score: 80 },
             { distance: 3, number: 1, score: 70 },
           ],
         },
+        // 深圳
         宝安区: {
           value: [113.8831, 22.5533],
           scatter: [
@@ -53,12 +82,33 @@
         },
       };
 
+      var areaMapping = {
+        清晖园: "顺德区",
+        佛山科学技术学院: "顺德区",
+        德胜学校: "顺德区",
+        // Add other mappings here...
+      };
+
+      // Modified function to aggregate data for an area
+      function getAllScatterDataForArea(areaName) {
+        var allData = [];
+        for (var key in mapPoints) {
+          if (mapPoints.hasOwnProperty(key)) {
+            var pointArea = areaMapping[key] || key; // Fallback to key itself if no mapping
+            if (pointArea === areaName) {
+              allData = allData.concat(mapPoints[key].scatter);
+            }
+          }
+        }
+        return allData;
+      }
+
       // Function to set scatter plot option
       function setScatterOption(data) {
         // Transform data for scatter plot (distance and score)
         var transformedData = data.map(function (item) {
           return {
-            value: [item.distance, item.score, item.number],
+            value: [item.distance, item.score, item.number, item.quantity],
             symbolSize: item.number * 10, // Adjust the multiplier as needed
             // Additional properties for your data can go here
           };
@@ -79,8 +129,8 @@
           },
           xAxis: {
             name: "Distance to Metro (km)", // Name for x-axis
-            min: 1,
-            max: 10,
+            min: 0,
+            max: 4,
             // Additional xAxis configuration here
           },
           yAxis: {
@@ -105,7 +155,7 @@
                   show: true,
                   formatter: function (params) {
                     // The 'number' is now directly in params.value[2]
-                    return params.value[2];
+                    return params.value[3];
                   },
                   position: "inside",
                 },
@@ -183,10 +233,9 @@
 
       // Map click event listener
       mapChart.on("click", function (params) {
-        // Check if the click is on a markPoint
-        if (mapPoints[params.name]) {
-          setScatterOption(mapPoints[params.name].scatter);
-        }
+        var clickedArea = areaMapping[params.name] || params.name; // Use mapping to find the area
+        var aggregatedData = getAllScatterDataForArea(clickedArea);
+        setScatterOption(aggregatedData);
       });
     </script>
   </body>
