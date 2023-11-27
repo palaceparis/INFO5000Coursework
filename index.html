@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Group 1">
-<meta name="dcterms.date" content="2023-11-27">
+<meta name="dcterms.date" content="2023-11-28">
 
 <title>Finding Emergency Sanitary Pad Stations in City Corners (寻找城市角落的紧急卫生巾站)</title>
 <style>
@@ -50,14 +50,51 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#interactive-plot" id="toc-interactive-plot" class="nav-link active" data-scroll-target="#interactive-plot">Interactive plot</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#interactive-plot-presentation" id="toc-interactive-plot-presentation" class="nav-link" data-scroll-target="#interactive-plot-presentation">Interactive plot Presentation</a></li>
-  <li><a href="#methodology-of-interactive-plot-creation" id="toc-methodology-of-interactive-plot-creation" class="nav-link" data-scroll-target="#methodology-of-interactive-plot-creation">Methodology of Interactive Plot Creation</a>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#purpose-and-vision" id="toc-purpose-and-vision" class="nav-link" data-scroll-target="#purpose-and-vision">Purpose and Vision</a></li>
+  <li><a href="#scope-of-the-study" id="toc-scope-of-the-study" class="nav-link" data-scroll-target="#scope-of-the-study">Scope of the Study</a></li>
+  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a>
+  <ul class="collapse">
+  <li><a href="#field-studies" id="toc-field-studies" class="nav-link" data-scroll-target="#field-studies">Field Studies</a></li>
+  <li><a href="#weibo-database-analyses" id="toc-weibo-database-analyses" class="nav-link" data-scroll-target="#weibo-database-analyses">Weibo Database Analyses</a></li>
+  <li><a href="#surveys" id="toc-surveys" class="nav-link" data-scroll-target="#surveys">Surveys</a></li>
+  </ul></li>
+  <li><a href="#interactive-plot-presentation" id="toc-interactive-plot-presentation" class="nav-link" data-scroll-target="#interactive-plot-presentation">Interactive Plot Presentation</a>
   <ul class="collapse">
   <li><a href="#data-collection-and-preparation" id="toc-data-collection-and-preparation" class="nav-link" data-scroll-target="#data-collection-and-preparation">Data Collection and Preparation</a></li>
   <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation">Data Transformation</a></li>
+  <li><a href="#interactive-map-and-scatter-plot-creation" id="toc-interactive-map-and-scatter-plot-creation" class="nav-link" data-scroll-target="#interactive-map-and-scatter-plot-creation">Interactive Map and Scatter Plot Creation</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-of-data" id="toc-interpretation-of-data" class="nav-link" data-scroll-target="#interpretation-of-data">Interpretation of Data</a></li>
+  <li><a href="#comparative-study" id="toc-comparative-study" class="nav-link" data-scroll-target="#comparative-study">Comparative Study</a>
+  <ul class="collapse">
+  <li><a href="#micro-level---evaluation-of-sanitary-napkin-stations-in-guangdong" id="toc-micro-level---evaluation-of-sanitary-napkin-stations-in-guangdong" class="nav-link" data-scroll-target="#micro-level---evaluation-of-sanitary-napkin-stations-in-guangdong">Micro Level - Evaluation of Sanitary Napkin Stations in Guangdong</a></li>
+  <li><a href="#macro-level---comparison-with-other-countries" id="toc-macro-level---comparison-with-other-countries" class="nav-link" data-scroll-target="#macro-level---comparison-with-other-countries">Macro Level - Comparison with Other Countries</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#challenges-and-limitations" id="toc-challenges-and-limitations" class="nav-link" data-scroll-target="#challenges-and-limitations">Challenges and Limitations</a>
+  <ul class="collapse">
+  <li><a href="#survey-improvement" id="toc-survey-improvement" class="nav-link" data-scroll-target="#survey-improvement">Survey Improvement</a></li>
+  <li><a href="#vending-machine-iot-system" id="toc-vending-machine-iot-system" class="nav-link" data-scroll-target="#vending-machine-iot-system">Vending Machine IoT System</a></li>
+  <li><a href="#visualization-map-data-collection" id="toc-visualization-map-data-collection" class="nav-link" data-scroll-target="#visualization-map-data-collection">Visualization Map Data Collection</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#recommendations-and-future-work" id="toc-recommendations-and-future-work" class="nav-link" data-scroll-target="#recommendations-and-future-work">Recommendations and Future Work</a>
+  <ul class="collapse">
+  <li><a href="#leverage-online-supplier-lowering-cost" id="toc-leverage-online-supplier-lowering-cost" class="nav-link" data-scroll-target="#leverage-online-supplier-lowering-cost">Leverage online supplier &amp; Lowering Cost</a></li>
+  <li><a href="#sustainable-design-environmental-awareness" id="toc-sustainable-design-environmental-awareness" class="nav-link" data-scroll-target="#sustainable-design-environmental-awareness">Sustainable Design &amp; Environmental Awareness</a></li>
+  <li><a href="#health-and-hygiene-education" id="toc-health-and-hygiene-education" class="nav-link" data-scroll-target="#health-and-hygiene-education">Health and Hygiene Education</a></li>
+  <li><a href="#managing-conflicts-of-interest" id="toc-managing-conflicts-of-interest" class="nav-link" data-scroll-target="#managing-conflicts-of-interest">Managing Conflicts of Interest</a></li>
+  <li><a href="#upholding-university-image" id="toc-upholding-university-image" class="nav-link" data-scroll-target="#upholding-university-image">Upholding University Image</a></li>
+  <li><a href="#legislation-recommendations" id="toc-legislation-recommendations" class="nav-link" data-scroll-target="#legislation-recommendations">Legislation Recommendations</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -83,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 27, 2023</p>
+      <p class="date">November 28, 2023</p>
     </div>
   </div>
   
@@ -178,15 +215,55 @@ iframe {
 <section id="contents" class="level11">
 <p class="heading">Contents</p>
 </section>
-<section id="interactive-plot" class="level1">
-<h1>Interactive plot</h1>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>The main social problem addressed in this project is menstrual poverty and stigma about women’s menstrual cycle. Approximately 40 million children in China live in special hardship areas, with around 4 million girls aged 12-16 facing menstrual poverty. A survey showed that about 5% of girls in poverty areas do not use sanitary napkins, leading to gynecological diseases, psychological problems, and risks to education and employment. Furthermore, 93% of Chinese women suffer from non-essential gynecological diseases, with 63% caused by poor-quality sanitary napkins, according to the MeiBuEr brand.</p>
+<p>In our school, there is a lack of clarity in budget and responsibility for providing sanitary napkins. The logistics department requires more usage data to install vending machines, and the Health Safety Environment department does not classify sanitary napkins as first aid supplies. Attempts to install sanitary napkin self-service boxes in universities have been unsuccessful, yet personal electronic charging banks are widely available. Family planning supplies like condoms are freely distributed, yet menstrual products are not, despite their importance in preventing diseases and psychological issues. The demand for sanitary napkins on high-speed trains in China in 2022 highlights the urgency of this issue.</p>
+<p>Social stigma against menstruation adds to the problem. Menstruation is often referred to in euphemisms and period products are hidden in daily life. A survey among students at the Hong Kong University of Science and Technology (Guangzhou) revealed that 43% feel uncomfortable discussing sanitary napkins and periods, with 56% associating it with negative emotions.</p>
+</section>
+<section id="purpose-and-vision" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-and-vision">Purpose and Vision</h2>
+<p>Our goal is to raise awareness that sanitary napkins are essential hygiene products and encourage open discussions about menstruation. We aim to build a female-friendly and children-friendly society with humanistic care, where providing free period items is seen as a fundamental human right.</p>
+<p>We plan to set up an emergency feminine product accessible station in the female restroom of the maker space at HKUST Guangzhou. The pilot project will run for one year, starting at HKUST Guangzhou and potentially expanding to other cities in the Greater Bay Area.</p>
+</section>
+<section id="scope-of-the-study" class="level2">
+<h2 class="anchored" data-anchor-id="scope-of-the-study">Scope of the Study</h2>
+<p>We aim to sell sanitary napkins via emergency feminine product accessible stations and provide free emergency sanitary napkins once a month after securing sponsorship. The project includes analyzing vending machine IoT systems, developing a data visualization map website for locating stations, and a rating system for evaluating them. This forms part of the educational element to alleviate menstrual stigma.</p>
+<p>The project involves team members from Info Hub (website and IoT system), SEE Thrust (advice on solar panel usage), and Society Hub (vending machine sponsorship, data collection, website content, survey, and policy recommendations).</p>
+</section>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<section id="data-collection" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
+<section id="field-studies" class="level3">
+<h3 class="anchored" data-anchor-id="field-studies">Field Studies</h3>
+<p>We conducted field studies at Taikoo Hui and Landmark shopping malls in Guangzhou, and QingHuiYuan in Foshan. Our focus was on the availability, number, location, and affordability of emergency feminine product accessible stations.</p>
+</section>
+<section id="weibo-database-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="weibo-database-analyses">Weibo Database Analyses</h3>
+<p>Using keywords like “sanitary pad self-service box” on Weibo, we gathered data on emergency feminine product accessible stations at various school locations in Guangdong province to build our visualization map database.</p>
+</section>
+<section id="surveys" class="level3">
+<h3 class="anchored" data-anchor-id="surveys">Surveys</h3>
+<p>We designed a survey for understanding budget preferences and consumption habits related to sanitary pads among university students and staff at HKUST(GZ), employing stratified random sampling.</p>
+<section id="survey-design" class="level4">
+<h4 class="anchored" data-anchor-id="survey-design">Survey Design</h4>
+<p>The survey, created on Tencent vote, assessed awareness and attitudes towards the availability and affordability of sanitary pads.</p>
+</section>
+<section id="survey-result" class="level4">
+<h4 class="anchored" data-anchor-id="survey-result">Survey Result</h4>
+<p>From 62 responses, 85% prefer online platforms for purchasing sanitary pads, while 56% also use supermarkets and convenience stores. Budget preferences varied, with 40% spending 1-2 RMB per pad and 39% spending 2-3 RMB. Brand loyalty was high, with 83.87% considering the brand important. Quality was the most crucial factor for 84% of respondents. Only 6% prioritized the convenience of purchase location, suggesting limited necessity for multiple campus stations. Interest in purchasing other products like cleaning items, disposable underwear, and snacks at these stations was also noted.</p>
+</section>
+</section>
+</section>
 <section id="interactive-plot-presentation" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-plot-presentation">Interactive plot Presentation</h2>
+<h2 class="anchored" data-anchor-id="interactive-plot-presentation">Interactive Plot Presentation</h2>
 <iframe src="plot.html" width="100%" height="400">
 </iframe>
-</section>
-<section id="methodology-of-interactive-plot-creation" class="level2">
-<h2 class="anchored" data-anchor-id="methodology-of-interactive-plot-creation">Methodology of Interactive Plot Creation</h2>
+<p>We used a dataset detailing Emergency Sanitary Pad Station locations, including type, district, number of stations, and proximity to metro stations. This data was converted into geographical coordinates for visualization.</p>
 <section id="data-collection-and-preparation" class="level3">
 <h3 class="anchored" data-anchor-id="data-collection-and-preparation">Data Collection and Preparation</h3>
 <p>Our study utilized a collected dataset detailing the locations of Emergency Sanitary Pad Stations across various city corners. This dataset included key variables such as the type of location (e.g., shopping malls, universities), the district in which the station is located, the number of available stations, and the distance to the nearest metro station. To facilitate our analysis, we converted these data points into geographical coordinates.</p>
@@ -194,8 +271,9 @@ iframe {
 <section id="data-transformation" class="level3">
 <h3 class="anchored" data-anchor-id="data-transformation">Data Transformation</h3>
 <p>In order to address data inconsistencies and enhance the visualization, we undertook several preprocessing steps: - <strong>Handling Missing Values:</strong> Instances where the number of stations was not reported (<code>NA</code> values) were set to zero. This approach ensures continuity and completeness in our analysis. - <strong>Normalization:</strong> Considering the high variance observed in the number of stations across different locations, we applied a logarithmic normalization. This transformation not only stabilized the variance but also improved the interpretability of our data in the visual representation.</p>
-<section id="interactive-map-and-scatter-plot-creation" class="level4">
-<h4 class="anchored" data-anchor-id="interactive-map-and-scatter-plot-creation">Interactive Map and Scatter Plot Creation</h4>
+</section>
+<section id="interactive-map-and-scatter-plot-creation" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-map-and-scatter-plot-creation">Interactive Map and Scatter Plot Creation</h3>
 <p>We employed ECharts, a powerful, interactive charting and visualization library, for creating our visualizations. The methodology for developing these interactive plots is described below:</p>
 <ol type="1">
 <li><strong>Initializing the Containers:</strong>
@@ -228,8 +306,167 @@ iframe {
 </ul></li>
 </ol>
 <p>Through these methodological steps, we successfully developed an interactive visualization tool that enables users to explore the distribution and characteristics of Emergency Sanitary Pad Stations across different city areas. This tool not only presents the data in an engaging and informative manner but also allows for an in-depth analysis of the availability and accessibility of these crucial facilities.</p>
-<!--  
-
+</section>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<section id="interpretation-of-data" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-of-data">Interpretation of Data</h2>
+</section>
+<section id="comparative-study" class="level2">
+<h2 class="anchored" data-anchor-id="comparative-study">Comparative Study</h2>
+<section id="micro-level---evaluation-of-sanitary-napkin-stations-in-guangdong" class="level3">
+<h3 class="anchored" data-anchor-id="micro-level---evaluation-of-sanitary-napkin-stations-in-guangdong">Micro Level - Evaluation of Sanitary Napkin Stations in Guangdong</h3>
+<p>We developed a rating system to evaluate sanitary pad dispensers in Guangdong, comparing three specific dispensers based on various criteria outlined in an Excel spreadsheet.</p>
+</section>
+<section id="macro-level---comparison-with-other-countries" class="level3">
+<h3 class="anchored" data-anchor-id="macro-level---comparison-with-other-countries">Macro Level - Comparison with Other Countries</h3>
+<p>During China’s 13th National People’s Congress in 2021, Wang Zuoying proposed three policies regarding sanitary napkins to the Treasury Department: including basic sanitary napkins in medical insurance, establishing a fund for free period products for certain women, and reducing value-added tax on feminine hygiene products. However, these proposals were redirected to the National Health Commission and not sponsored.</p>
+<p>Internationally, Scotland became the first region to offer free menstrual supplies in 2020. India removed the tax on sanitary products in 2018 and is promoting cheap sanitary napkins. Korea, although without a nationwide program, started distributing free sanitary napkins in 10 public areas in Central Seoul from 2018.</p>
+<p>Table 1 summarizes the policies of 20 countries and regions regarding free menstrual supplies.</p>
+<section id="table-1-20-countries-and-regions-providing-different-levels-of-free-menstrual-supplies" class="level4">
+<h4 class="anchored" data-anchor-id="table-1-20-countries-and-regions-providing-different-levels-of-free-menstrual-supplies">Table 1: 20 Countries and Regions Providing Different Levels of Free Menstrual Supplies</h4>
+<table class="table">
+<colgroup>
+<col style="width: 46%">
+<col style="width: 7%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Free to All in All Public Areas (Example Locations)</th>
+<th>No Tax</th>
+<th>Free in Certain Regions or Public Areas (Example Locations)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scotland (community centers, youth clubs, and pharmacies etc)</td>
+<td>India</td>
+<td>New Zealand (school)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Kenya</td>
+<td>Australia (school in New South Wales and Victoria)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>South Africa</td>
+<td>United States (school in Illinois, Washington, New York, New Hampshire, and Virginia)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>France (school in Île-de-France)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Kenya (school)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>South Africa (school)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Botswana (school)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Korea (public areas, e.g., library in Central Seoul)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Uganda (school)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Zambia (rural school)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Canada (schools and federal agencies in British Columbia, Ontario, Nova Scotia, and PEI)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+<section id="challenges-and-limitations" class="level1">
+<h1>Challenges and Limitations</h1>
+<section id="survey-improvement" class="level2">
+<h2 class="anchored" data-anchor-id="survey-improvement">Survey Improvement</h2>
+<p>Our survey design may introduce bias. The framing of questions can influence responses, assuming certain preferences. For instance, the absence of an option for “no interest in buying other products” could skew results. Acquiescence bias, where respondents tend to agree with statements regardless of their content, is also a concern, especially in sensitive topics like sanitary issues, price, and cultural aspects.</p>
+</section>
+<section id="vending-machine-iot-system" class="level2">
+<h2 class="anchored" data-anchor-id="vending-machine-iot-system">Vending Machine IoT System</h2>
+<p>We faced challenges in designing the IoT system and purchasing software for the sanitary pad stations, which need to be discussed in detail.</p>
+</section>
+<section id="visualization-map-data-collection" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-map-data-collection">Visualization Map Data Collection</h2>
+<p>Our research methods and data collection for the visualization map have limitations that need to be addressed.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Our “FreePeriod” project combines teamwork, creative thinking, and resource connections to address the need for sanitary pad availability. Key achievements include:</p>
+<ul>
+<li>Building an IoT vending machine prototype for our emergency feminine product accessible station network.</li>
+<li>Developing a website with data visualization to analyze existing stations in Guangdong province.</li>
+<li>Creating a rating system and conducting a survey among school users to implement the station on campus.</li>
+<li>Proposing multiple policy recommendations.</li>
+</ul>
+<p>These initiatives enable institutions to effectively tackle period stigma and poverty, manage potential conflicts of interest, and promote a progressive, inclusive environment. Implementing these strategies benefits not just students and staff but also contributes to wider societal advancements in menstrual health and gender equality.</p>
+</section>
+<section id="recommendations-and-future-work" class="level1">
+<h1>Recommendations and Future Work</h1>
+<section id="leverage-online-supplier-lowering-cost" class="level2">
+<h2 class="anchored" data-anchor-id="leverage-online-supplier-lowering-cost">Leverage online supplier &amp; Lowering Cost</h2>
+<p>To maintain a sustainable business, it is important to explore partnerships with popular online platforms for discounts or special offers for students and staff. Implement programs to provide free or subsidized sanitary products to students, especially those in financial need.</p>
+</section>
+<section id="sustainable-design-environmental-awareness" class="level2">
+<h2 class="anchored" data-anchor-id="sustainable-design-environmental-awareness">Sustainable Design &amp; Environmental Awareness</h2>
+<p>Promote the use of sustainable menstrual products like menstrual cups, cloth pads, or biodegradable pads. For example, we could add survey questions about awareness and usage of eco-friendly sanitary products to gauge environmental consciousness. Raise awareness about the environmental burden of sanitary waste disposal practices and implement proper disposal methods to minimize environmental impact. We have also been in touch with professors and students in the Material Science field to collaborate and potentially make sanitary napkins recyclable.</p>
+<p>In addition, we aspire to attach solar panels to the vending machine to make it functional off-grid outside. This design is beneficial to under-developed rural areas in China. We could even attach it to tricycles and distribute it free of charge after securing donations. Big brands like Cola have already been using solar panel vending machines in Japan. Thus, it also has an overseas market.</p>
+</section>
+<section id="health-and-hygiene-education" class="level2">
+<h2 class="anchored" data-anchor-id="health-and-hygiene-education">Health and Hygiene Education</h2>
+<p>Organize workshops and seminars on menstrual health and hygiene. Include information on sustainable practices and proper disposal methods. This not only provides essential gender and health education for young girls and women in the community but also could raise awareness about women’s rights in society.</p>
+</section>
+<section id="managing-conflicts-of-interest" class="level2">
+<h2 class="anchored" data-anchor-id="managing-conflicts-of-interest">Managing Conflicts of Interest</h2>
+<ol type="1">
+<li><strong>Transparent Procurement Processes:</strong> Ensure transparency in the procurement of sanitary products, avoiding any appearance of favoritism or conflicts of interest, and use open tenders and clear criteria for selecting suppliers.</li>
+<li><strong>Diverse Committee Involvement:</strong> Form a committee with diverse representation (students, faculty, administrative staff) to oversee initiatives related to sanitary issues. This committee can also review potential conflicts of interest. Regarding the implementation of stations on campus and validating the rating system, we plan to consult experts such as staff members trained in electricity safety and handicap people association regarding their user experience.</li>
+<li><strong>Regular Audits and Reviews:</strong> Conduct regular audits of procurement processes and initiatives. Ensure funds allocated for sanitary issues are used effectively and transparently.</li>
+</ol>
+</section>
+<section id="upholding-university-image" class="level2">
+<h2 class="anchored" data-anchor-id="upholding-university-image">Upholding University Image</h2>
+<ol type="1">
+<li><strong>Positive Communication Strategy:</strong> Publicize efforts and initiatives related to improving sanitary facilities and promoting gender inclusivity. Use the university’s platforms to highlight commitments to sustainability and social responsibility.</li>
+<li><strong>Community Engagement:</strong> Involve the university community in decision-making processes related to sanitary issues. Encourage feedback and suggestions from students and staff.</li>
+<li><strong>Collaboration with External Organizations:</strong> Partner with NGOs, governmental organizations, and corporations that focus on menstrual health and gender equality. These collaborations can enhance the university’s reputation as a socially responsible institution.</li>
+<li><strong>Regular Updates and Reporting:</strong> Provide regular updates to the university community about ongoing initiatives and improvements. Transparency in actions and communications helps maintain a positive image.</li>
+</ol>
+</section>
+<section id="legislation-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="legislation-recommendations">Legislation Recommendations</h2>
+<p>We plan to expand to other high schools, middle schools, and even primary schools. For the beneficiary students that do not have income, such as those younger than 18, it is likely that they cannot afford the education program or the sanitary napkin product.</p>
+<p>We can find alternative `customers’ such as those people affiliated with the school: - asking alumni, the investment office, or logistics office from the schools to sponsor an emergency sanitary napkin station; - inviting the sanitary napkin producers to give the products to the schools; - inviting local businesses to sponsor local schools to get the products and education program as a community goodwill project; - asking donors to fund the sanitary napkins, e.g., through an online donation page at crowd-sourcing websites, Red Cross, or Tencent Charity.</p>
+<p>We also would like to promote the inclusion of the basic version of sanitary napkins into medical insurance and promote the national reduction of value-added tax on feminine hygiene products. We plan to model the policy details after the example of the baby care room legislation in Guangzhou.</p>
+<p>In the future, we will find our advocate from members of the National People’s Congress and the National Committee of the Chinese People’s Political Consultative Conference. We will collaborate with them and other locations that implemented the Emergency Feminine Product Accessible station to suggest to the Health Commission office in Guangzhou to share our experiences and demand legislative laws to mandate the delivery of sanitary napkins in public places.</p>
+<!-- 
 
 # Introduction
 ## Background and Purpose
@@ -374,8 +611,6 @@ Reflect on the importance of sanitary pad accessibility in urban areas.
 List of Sources: Include all the references and data sources used in your study.
 
 -->
-</section>
-</section>
 </section>
 </section>
 

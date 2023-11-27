@@ -98,13 +98,50 @@ iframe {
 
 ########### Contents
 
-# Interactive plot
+# Introduction
 
-## Interactive plot Presentation
+## Background
+The main social problem addressed in this project is menstrual poverty and stigma about women's menstrual cycle. Approximately 40 million children in China live in special hardship areas, with around 4 million girls aged 12-16 facing menstrual poverty. A survey showed that about 5% of girls in poverty areas do not use sanitary napkins, leading to gynecological diseases, psychological problems, and risks to education and employment. Furthermore, 93% of Chinese women suffer from non-essential gynecological diseases, with 63% caused by poor-quality sanitary napkins, according to the MeiBuEr brand.
+
+In our school, there is a lack of clarity in budget and responsibility for providing sanitary napkins. The logistics department requires more usage data to install vending machines, and the Health Safety Environment department does not classify sanitary napkins as first aid supplies. Attempts to install sanitary napkin self-service boxes in universities have been unsuccessful, yet personal electronic charging banks are widely available. Family planning supplies like condoms are freely distributed, yet menstrual products are not, despite their importance in preventing diseases and psychological issues. The demand for sanitary napkins on high-speed trains in China in 2022 highlights the urgency of this issue.
+
+Social stigma against menstruation adds to the problem. Menstruation is often referred to in euphemisms and period products are hidden in daily life. A survey among students at the Hong Kong University of Science and Technology (Guangzhou) revealed that 43% feel uncomfortable discussing sanitary napkins and periods, with 56% associating it with negative emotions.
+
+## Purpose and Vision
+Our goal is to raise awareness that sanitary napkins are essential hygiene products and encourage open discussions about menstruation. We aim to build a female-friendly and children-friendly society with humanistic care, where providing free period items is seen as a fundamental human right.
+
+We plan to set up an emergency feminine product accessible station in the female restroom of the maker space at HKUST Guangzhou. The pilot project will run for one year, starting at HKUST Guangzhou and potentially expanding to other cities in the Greater Bay Area.
+
+## Scope of the Study
+We aim to sell sanitary napkins via emergency feminine product accessible stations and provide free emergency sanitary napkins once a month after securing sponsorship. The project includes analyzing vending machine IoT systems, developing a data visualization map website for locating stations, and a rating system for evaluating them. This forms part of the educational element to alleviate menstrual stigma.
+
+The project involves team members from Info Hub (website and IoT system), SEE Thrust (advice on solar panel usage), and Society Hub (vending machine sponsorship, data collection, website content, survey, and policy recommendations).
+
+
+# Methodology
+
+## Data Collection
+
+### Field Studies
+We conducted field studies at Taikoo Hui and Landmark shopping malls in Guangzhou, and QingHuiYuan in Foshan. Our focus was on the availability, number, location, and affordability of emergency feminine product accessible stations.
+
+### Weibo Database Analyses
+Using keywords like "sanitary pad self-service box" on Weibo, we gathered data on emergency feminine product accessible stations at various school locations in Guangdong province to build our visualization map database.
+
+### Surveys
+We designed a survey for understanding budget preferences and consumption habits related to sanitary pads among university students and staff at HKUST(GZ), employing stratified random sampling.
+
+#### Survey Design
+The survey, created on Tencent vote, assessed awareness and attitudes towards the availability and affordability of sanitary pads.
+
+#### Survey Result
+From 62 responses, 85% prefer online platforms for purchasing sanitary pads, while 56% also use supermarkets and convenience stores. Budget preferences varied, with 40% spending 1-2 RMB per pad and 39% spending 2-3 RMB. Brand loyalty was high, with 83.87% considering the brand important. Quality was the most crucial factor for 84% of respondents. Only 6% prioritized the convenience of purchase location, suggesting limited necessity for multiple campus stations. Interest in purchasing other products like cleaning items, disposable underwear, and snacks at these stations was also noted.
+
+## Interactive Plot Presentation
 
 <iframe src="plot.html" width="100%" height="400"></iframe>
 
-## Methodology of Interactive Plot Creation
+We used a dataset detailing Emergency Sanitary Pad Station locations, including type, district, number of stations, and proximity to metro stations. This data was converted into geographical coordinates for visualization.
 
 ### Data Collection and Preparation
 Our study utilized a collected dataset detailing the locations of Emergency Sanitary Pad Stations across various city corners. This dataset included key variables such as the type of location (e.g., shopping malls, universities), the district in which the station is located, the number of available stations, and the distance to the nearest metro station. To facilitate our analysis, we converted these data points into geographical coordinates.
@@ -114,7 +151,7 @@ In order to address data inconsistencies and enhance the visualization, we under
 - **Handling Missing Values:** Instances where the number of stations was not reported (`NA` values) were set to zero. This approach ensures continuity and completeness in our analysis.
 - **Normalization:** Considering the high variance observed in the number of stations across different locations, we applied a logarithmic normalization. This transformation not only stabilized the variance but also improved the interpretability of our data in the visual representation.
 
-#### Interactive Map and Scatter Plot Creation
+### Interactive Map and Scatter Plot Creation
 We employed ECharts, a powerful, interactive charting and visualization library, for creating our visualizations. The methodology for developing these interactive plots is described below:
 
 1. **Initializing the Containers:**
@@ -141,9 +178,103 @@ We employed ECharts, a powerful, interactive charting and visualization library,
 
 Through these methodological steps, we successfully developed an interactive visualization tool that enables users to explore the distribution and characteristics of Emergency Sanitary Pad Stations across different city areas. This tool not only presents the data in an engaging and informative manner but also allows for an in-depth analysis of the availability and accessibility of these crucial facilities.
 
+# Results
 
-<!--  
+## Interpretation of Data
 
+## Comparative Study
+
+### Micro Level - Evaluation of Sanitary Napkin Stations in Guangdong
+We developed a rating system to evaluate sanitary pad dispensers in Guangdong, comparing three specific dispensers based on various criteria outlined in an Excel spreadsheet.
+
+### Macro Level - Comparison with Other Countries
+During China's 13th National People’s Congress in 2021, Wang Zuoying proposed three policies regarding sanitary napkins to the Treasury Department: including basic sanitary napkins in medical insurance, establishing a fund for free period products for certain women, and reducing value-added tax on feminine hygiene products. However, these proposals were redirected to the National Health Commission and not sponsored.
+
+Internationally, Scotland became the first region to offer free menstrual supplies in 2020. India removed the tax on sanitary products in 2018 and is promoting cheap sanitary napkins. Korea, although without a nationwide program, started distributing free sanitary napkins in 10 public areas in Central Seoul from 2018.
+
+Table 1 summarizes the policies of 20 countries and regions regarding free menstrual supplies.
+
+#### Table 1: 20 Countries and Regions Providing Different Levels of Free Menstrual Supplies
+
+| Free to All in All Public Areas (Example Locations)                                            | No Tax         | Free in Certain Regions or Public Areas (Example Locations)                                   |
+| --------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------- |
+| Scotland (community centers, youth clubs, and pharmacies etc)                                  | India          | New Zealand (school)                                                                         |
+|                                                                                               | Kenya          | Australia (school in New South Wales and Victoria)                                           |
+|                                                                                               | South Africa   | United States (school in Illinois, Washington, New York, New Hampshire, and Virginia)        |
+|                                                                                               |                | France (school in Île-de-France)                                                             |
+|                                                                                               |                | Kenya (school)                                                                               |
+|                                                                                               |                | South Africa (school)                                                                        |
+|                                                                                               |                | Botswana (school)                                                                            |
+|                                                                                               |                | Korea (public areas, e.g., library in Central Seoul)                                         |
+|                                                                                               |                | Uganda (school)                                                                              |
+|                                                                                               |                | Zambia (rural school)                                                                        |
+|                                                                                               |                | Canada (schools and federal agencies in British Columbia, Ontario, Nova Scotia, and PEI)     |
+
+# Challenges and Limitations
+
+## Survey Improvement
+Our survey design may introduce bias. The framing of questions can influence responses, assuming certain preferences. For instance, the absence of an option for "no interest in buying other products" could skew results. Acquiescence bias, where respondents tend to agree with statements regardless of their content, is also a concern, especially in sensitive topics like sanitary issues, price, and cultural aspects.
+
+## Vending Machine IoT System
+We faced challenges in designing the IoT system and purchasing software for the sanitary pad stations, which need to be discussed in detail.
+
+## Visualization Map Data Collection
+Our research methods and data collection for the visualization map have limitations that need to be addressed.
+
+# Conclusion
+
+Our "FreePeriod" project combines teamwork, creative thinking, and resource connections to address the need for sanitary pad availability. Key achievements include:
+
+- Building an IoT vending machine prototype for our emergency feminine product accessible station network.
+- Developing a website with data visualization to analyze existing stations in Guangdong province.
+- Creating a rating system and conducting a survey among school users to implement the station on campus.
+- Proposing multiple policy recommendations.
+
+These initiatives enable institutions to effectively tackle period stigma and poverty, manage potential conflicts of interest, and promote a progressive, inclusive environment. Implementing these strategies benefits not just students and staff but also contributes to wider societal advancements in menstrual health and gender equality.
+
+
+# Recommendations and Future Work
+
+## Leverage online supplier & Lowering Cost
+To maintain a sustainable business, it is important to explore partnerships with popular online platforms for discounts or special offers for students and staff. Implement programs to provide free or subsidized sanitary products to students, especially those in financial need.
+
+## Sustainable Design & Environmental Awareness
+Promote the use of sustainable menstrual products like menstrual cups, cloth pads, or biodegradable pads. For example, we could add survey questions about awareness and usage of eco-friendly sanitary products to gauge environmental consciousness. Raise awareness about the environmental burden of sanitary waste disposal practices and implement proper disposal methods to minimize environmental impact. We have also been in touch with professors and students in the Material Science field to collaborate and potentially make sanitary napkins recyclable.
+
+In addition, we aspire to attach solar panels to the vending machine to make it functional off-grid outside. This design is beneficial to under-developed rural areas in China. We could even attach it to tricycles and distribute it free of charge after securing donations. Big brands like Cola have already been using solar panel vending machines in Japan. Thus, it also has an overseas market.
+
+## Health and Hygiene Education
+Organize workshops and seminars on menstrual health and hygiene. Include information on sustainable practices and proper disposal methods. This not only provides essential gender and health education for young girls and women in the community but also could raise awareness about women’s rights in society.
+
+## Managing Conflicts of Interest
+1. **Transparent Procurement Processes:** Ensure transparency in the procurement of sanitary products, avoiding any appearance of favoritism or conflicts of interest, and use open tenders and clear criteria for selecting suppliers.
+2. **Diverse Committee Involvement:** Form a committee with diverse representation (students, faculty, administrative staff) to oversee initiatives related to sanitary issues. This committee can also review potential conflicts of interest. Regarding the implementation of stations on campus and validating the rating system, we plan to consult experts such as staff members trained in electricity safety and handicap people association regarding their user experience.
+3. **Regular Audits and Reviews:** Conduct regular audits of procurement processes and initiatives. Ensure funds allocated for sanitary issues are used effectively and transparently.
+
+## Upholding University Image
+1. **Positive Communication Strategy:** Publicize efforts and initiatives related to improving sanitary facilities and promoting gender inclusivity. Use the university's platforms to highlight commitments to sustainability and social responsibility.
+2. **Community Engagement:** Involve the university community in decision-making processes related to sanitary issues. Encourage feedback and suggestions from students and staff.
+3. **Collaboration with External Organizations:** Partner with NGOs, governmental organizations, and corporations that focus on menstrual health and gender equality. These collaborations can enhance the university's reputation as a socially responsible institution.
+4. **Regular Updates and Reporting:** Provide regular updates to the university community about ongoing initiatives and improvements. Transparency in actions and communications helps maintain a positive image.
+
+## Legislation Recommendations
+We plan to expand to other high schools, middle schools, and even primary schools. For the beneficiary students that do not have income, such as those younger than 18, it is likely that they cannot afford the education program or the sanitary napkin product.
+
+We can find alternative `customers' such as those people affiliated with the school:
+- asking alumni, the investment office, or logistics office from the schools to sponsor an emergency sanitary napkin station;
+- inviting the sanitary napkin producers to give the products to the schools;
+- inviting local businesses to sponsor local schools to get the products and education program as a community goodwill project;
+- asking donors to fund the sanitary napkins, e.g., through an online donation page at crowd-sourcing websites, Red Cross, or Tencent Charity.
+
+We also would like to promote the inclusion of the basic version of sanitary napkins into medical insurance and promote the national reduction of value-added tax on feminine hygiene products. We plan to model the policy details after the example of the baby care room legislation in Guangzhou.
+
+In the future, we will find our advocate from members of the National People’s Congress and the National Committee of the Chinese People’s Political Consultative Conference. We will collaborate with them and other locations that implemented the Emergency Feminine Product Accessible station to suggest to the Health Commission office in Guangzhou to share our experiences and demand legislative laws to mandate the delivery of sanitary napkins in public places.
+
+
+
+
+
+<!-- 
 
 # Introduction
 ## Background and Purpose
