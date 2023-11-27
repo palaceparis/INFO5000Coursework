@@ -207,6 +207,16 @@
             echarts.registerMap("Guangdong", geoJson);
             // Map option
             mapOption = {
+              title: {
+                text: "Map of Guangdong, Shenzhen, Foshan, and Dongguan",
+                left: "center", // Centers the title
+                top: "top", // Positions the title at the top of the chart
+                textStyle: {
+                  color: "#333", // Sets the color of the text
+                  fontSize: 12, // Sets the font size
+                  fontWeight: "bold", // Makes the text bold
+                },
+              },
               tooltip: {
                 trigger: "item",
                 formatter: "{b}",
