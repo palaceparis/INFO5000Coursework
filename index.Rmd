@@ -87,6 +87,9 @@ knitr::opts_chunk$set(echo = TRUE)
   margin-left: 26px; /* Adjust if necessary */
 }
   
+iframe {
+    margin-bottom: -90px; /* Reduces the bottom margin of the iframe */
+}
 
 </style>
 
