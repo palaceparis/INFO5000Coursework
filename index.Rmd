@@ -97,7 +97,53 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Interactive plot
 
+## Interactive plot Presentation
+
 <iframe src="plot.html" width="100%" height="400"></iframe>
+
+
+To write the methodology section for the interactive plot creation in your report titled "Finding Emergency Sanitary Pad Stations in City Corners", you can structure it as follows:
+
+## Methodology of Interactive Plot Creation
+
+### Data Collection and Preparation
+Our study utilized a collected dataset detailing the locations of Emergency Sanitary Pad Stations across various city corners. This dataset included key variables such as the type of location (e.g., shopping malls, universities), the district in which the station is located, the number of available stations, and the distance to the nearest metro station. To facilitate our analysis, we converted these data points into geographical coordinates.
+
+### Data Transformation
+In order to address data inconsistencies and enhance the visualization, we undertook several preprocessing steps:
+- **Handling Missing Values:** Instances where the number of stations was not reported (`NA` values) were set to zero. This approach ensures continuity and completeness in our analysis.
+- **Normalization:** Considering the high variance observed in the number of stations across different locations, we applied a logarithmic normalization. This transformation not only stabilized the variance but also improved the interpretability of our data in the visual representation.
+
+#### Interactive Map and Scatter Plot Creation
+We employed ECharts, a powerful, interactive charting and visualization library, for creating our visualizations. The methodology for developing these interactive plots is described below:
+
+1. **Initializing the Containers:**
+   - The interactive map and scatter plot are displayed in separate containers (`mapContainer` and `scatterContainer`) within the webpage. These containers are dynamically sized and aligned for optimal viewing.
+
+2. **Loading and Parsing Data:**
+   - Using jQuery, we loaded our dataset from a JSON file. The data was then parsed to create a structured representation, where each station's location was associated with its respective data points such as distance to the metro, quantity, and type.
+
+3. **Chart Initialization and Configuration:**
+   - Two ECharts instances were created for the map (`mapChart`) and the scatter plot (`scatterChart`).
+   - The map visualization utilized a GeoJSON of the relevant city areas to plot the station locations. 
+   - The scatter plot was designed to display the log-normalized number of stations and their distance to the nearest metro station. Different types of locations were color-coded for better differentiation.
+
+4. **Data Grouping and Representation:**
+   - The data was grouped by location type to facilitate comparative analysis across different categories.
+   - Each group's data was represented as a series in the scatter plot, with individual data points reflecting the number of stations and their metro proximity.
+
+5. **Interactivity and Responsiveness:**
+   - Click events on the map trigger updates in the scatter plot, showing data corresponding to the selected area.
+   - The scatter plot dynamically adjusts its display based on the selected map region, providing an interactive experience that allows users to explore data in specific city areas.
+
+6. **Styling and Customization:**
+   - We customized the styling of the map and scatter plot for clarity and ease of use. This included adjustments to the layout, color schemes, labels, and tooltips to enhance user interaction and data comprehension.
+
+Through these methodological steps, we successfully developed an interactive visualization tool that enables users to explore the distribution and characteristics of Emergency Sanitary Pad Stations across different city areas. This tool not only presents the data in an engaging and informative manner but also allows for an in-depth analysis of the availability and accessibility of these crucial facilities.
+
+
+<!--  
+
 
 # Introduction
 ## Background and Purpose
@@ -186,7 +232,6 @@ Provide insights and trends identified from the interactive plot.
 
 
 
-
 # Challenges and Limitations
 ## Identify Challenges
 Discuss any challenges faced in locating and assessing the sanitary pad stations.
@@ -211,4 +256,4 @@ Reflect on the importance of sanitary pad accessibility in urban areas.
 # References
 List of Sources: Include all the references and data sources used in your study.
 
-
+-->

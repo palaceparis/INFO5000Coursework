@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -84,48 +50,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#interactive-plot" id="toc-interactive-plot" class="nav-link active" data-scroll-target="#interactive-plot">Interactive plot</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#interactive-plot" id="toc-interactive-plot" class="nav-link active" data-scroll-target="#interactive-plot">Interactive plot</a>
   <ul class="collapse">
-  <li><a href="#background-and-purpose" id="toc-background-and-purpose" class="nav-link" data-scroll-target="#background-and-purpose">Background and Purpose</a></li>
-  <li><a href="#scope-of-the-study" id="toc-scope-of-the-study" class="nav-link" data-scroll-target="#scope-of-the-study">Scope of the Study</a></li>
-  </ul></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <li><a href="#interactive-plot-presentation" id="toc-interactive-plot-presentation" class="nav-link" data-scroll-target="#interactive-plot-presentation">Interactive plot Presentation</a></li>
+  <li><a href="#methodology-of-interactive-plot-creation" id="toc-methodology-of-interactive-plot-creation" class="nav-link" data-scroll-target="#methodology-of-interactive-plot-creation">Methodology of Interactive Plot Creation</a>
   <ul class="collapse">
-  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a></li>
-  <li><a href="#interactive-plot-explanation" id="toc-interactive-plot-explanation" class="nav-link" data-scroll-target="#interactive-plot-explanation">Interactive Plot Explanation</a></li>
+  <li><a href="#data-collection-and-preparation" id="toc-data-collection-and-preparation" class="nav-link" data-scroll-target="#data-collection-and-preparation">Data Collection and Preparation</a></li>
+  <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation">Data Transformation</a></li>
   </ul></li>
-  <li><a href="#analysis-of-current-situation" id="toc-analysis-of-current-situation" class="nav-link" data-scroll-target="#analysis-of-current-situation">Analysis of Current Situation</a>
-  <ul class="collapse">
-  <li><a href="#distribution-of-dispensers" id="toc-distribution-of-dispensers" class="nav-link" data-scroll-target="#distribution-of-dispensers">Distribution of Dispensers</a></li>
-  <li><a href="#accessibility-and-visibility" id="toc-accessibility-and-visibility" class="nav-link" data-scroll-target="#accessibility-and-visibility">Accessibility and Visibility</a></li>
   </ul></li>
-  <li><a href="#comparative-study" id="toc-comparative-study" class="nav-link" data-scroll-target="#comparative-study">Comparative Study</a>
-  <ul class="collapse">
-  <li><a href="#benchmarking" id="toc-benchmarking" class="nav-link" data-scroll-target="#benchmarking">Benchmarking</a></li>
-  <li><a href="#lessons-from-previous-studies" id="toc-lessons-from-previous-studies" class="nav-link" data-scroll-target="#lessons-from-previous-studies">Lessons from Previous Studies</a></li>
-  </ul></li>
-  <li><a href="#interactive-plot-section" id="toc-interactive-plot-section" class="nav-link" data-scroll-target="#interactive-plot-section">Interactive Plot Section</a>
-  <ul class="collapse">
-  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
-  <li><a href="#interpretation-of-data" id="toc-interpretation-of-data" class="nav-link" data-scroll-target="#interpretation-of-data">Interpretation of Data</a></li>
-  </ul></li>
-  <li><a href="#challenges-and-limitations" id="toc-challenges-and-limitations" class="nav-link" data-scroll-target="#challenges-and-limitations">Challenges and Limitations</a>
-  <ul class="collapse">
-  <li><a href="#identify-challenges" id="toc-identify-challenges" class="nav-link" data-scroll-target="#identify-challenges">Identify Challenges</a></li>
-  <li><a href="#study-limitations" id="toc-study-limitations" class="nav-link" data-scroll-target="#study-limitations">Study Limitations</a></li>
-  </ul></li>
-  <li><a href="#recommendations-and-future-work" id="toc-recommendations-and-future-work" class="nav-link" data-scroll-target="#recommendations-and-future-work">Recommendations and Future Work</a>
-  <ul class="collapse">
-  <li><a href="#improving-accessibility" id="toc-improving-accessibility" class="nav-link" data-scroll-target="#improving-accessibility">Improving Accessibility</a></li>
-  <li><a href="#policy-recommendations" id="toc-policy-recommendations" class="nav-link" data-scroll-target="#policy-recommendations">Policy Recommendations</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
-  <ul class="collapse">
-  <li><a href="#summary-of-findings" id="toc-summary-of-findings" class="nav-link" data-scroll-target="#summary-of-findings">Summary of Findings</a></li>
-  <li><a href="#closing-remarks" id="toc-closing-remarks" class="nav-link" data-scroll-target="#closing-remarks">Closing Remarks</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
 </div>
@@ -244,156 +177,204 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="interactive-plot" class="level1">
 <h1>Interactive plot</h1>
+<section id="interactive-plot-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-plot-presentation">Interactive plot Presentation</h2>
 <iframe src="plot.html" width="100%" height="400">
 </iframe>
+<p>To write the methodology section for the interactive plot creation in your report titled “Finding Emergency Sanitary Pad Stations in City Corners”, you can structure it as follows:</p>
 </section>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<section id="background-and-purpose" class="level2">
-<h2 class="anchored" data-anchor-id="background-and-purpose">Background and Purpose</h2>
-<p>Introduce the necessity of emergency sanitary pad stations in urban areas, referencing the importance of accessibility and public health.</p>
+<section id="methodology-of-interactive-plot-creation" class="level2">
+<h2 class="anchored" data-anchor-id="methodology-of-interactive-plot-creation">Methodology of Interactive Plot Creation</h2>
+<section id="data-collection-and-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection-and-preparation">Data Collection and Preparation</h3>
+<p>Our study utilized a collected dataset detailing the locations of Emergency Sanitary Pad Stations across various city corners. This dataset included key variables such as the type of location (e.g., shopping malls, universities), the district in which the station is located, the number of available stations, and the distance to the nearest metro station. To facilitate our analysis, we converted these data points into geographical coordinates.</p>
 </section>
-<section id="scope-of-the-study" class="level2">
-<h2 class="anchored" data-anchor-id="scope-of-the-study">Scope of the Study</h2>
-<p>Define the geographical and demographic scope of your research. （可提及主要的两个部分，一个是可视化，一个是小程序那里under development的那个设备，太阳能那个，提第二点时提我们有算一些东西）</p>
-</section>
-</section>
-<section id="methodology" class="level1">
-<h1>Methodology</h1>
-<section id="data-collection" class="level2">
-<h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
-<p>Outline the methods used to gather data on sanitary pad dispensers, including any surveys, field studies, or database analyses.</p>
-</section>
-<section id="interactive-plot-explanation" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-plot-explanation">Interactive Plot Explanation</h2>
-<p>Describe how the interactive plot was developed and how it visualizes the data.</p>
-</section>
-</section>
-<section id="analysis-of-current-situation" class="level1">
-<h1>Analysis of Current Situation</h1>
-<section id="distribution-of-dispensers" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-of-dispensers">Distribution of Dispensers</h2>
-<p>Present findings on the number and locations of sanitary pad dispensers across different districts.</p>
-</section>
-<section id="accessibility-and-visibility" class="level2">
-<h2 class="anchored" data-anchor-id="accessibility-and-visibility">Accessibility and Visibility</h2>
-<p>Assess how accessible and visible these stations are to the public.</p>
-</section>
-</section>
-<section id="comparative-study" class="level1">
-<h1>Comparative Study</h1>
-<section id="benchmarking" class="level2">
-<h2 class="anchored" data-anchor-id="benchmarking">Benchmarking</h2>
-<p>Compare the availability of sanitary pad dispensers in your study area with other cities or standards, if applicable.</p>
-</section>
-<section id="lessons-from-previous-studies" class="level2">
-<h2 class="anchored" data-anchor-id="lessons-from-previous-studies">Lessons from Previous Studies</h2>
-<p>Reference the “育婴室” (baby care rooms) study as a benchmark or point of comparison.</p>
-</section>
-</section>
-<section id="interactive-plot-section" class="level1">
-<h1>Interactive Plot Section</h1>
-<section id="data-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="data-visualization">Data Visualization</h2>
-<p>Present the interactive plot showing the distribution of sanitary pad dispensers.</p>
-</section>
-<section id="interpretation-of-data" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation-of-data">Interpretation of Data</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
+<section id="data-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="data-transformation">Data Transformation</h3>
+<p>In order to address data inconsistencies and enhance the visualization, we undertook several preprocessing steps: - <strong>Handling Missing Values:</strong> Instances where the number of stations was not reported (<code>NA</code> values) were set to zero. This approach ensures continuity and completeness in our analysis. - <strong>Normalization:</strong> Considering the high variance observed in the number of stations across different locations, we applied a logarithmic normalization. This transformation not only stabilized the variance but also improved the interpretability of our data in the visual representation.</p>
+<section id="interactive-map-and-scatter-plot-creation" class="level4">
+<h4 class="anchored" data-anchor-id="interactive-map-and-scatter-plot-creation">Interactive Map and Scatter Plot Creation</h4>
+<p>We employed ECharts, a powerful, interactive charting and visualization library, for creating our visualizations. The methodology for developing these interactive plots is described below:</p>
+<ol type="1">
+<li><strong>Initializing the Containers:</strong>
+<ul>
+<li>The interactive map and scatter plot are displayed in separate containers (<code>mapContainer</code> and <code>scatterContainer</code>) within the webpage. These containers are dynamically sized and aligned for optimal viewing.</li>
+</ul></li>
+<li><strong>Loading and Parsing Data:</strong>
+<ul>
+<li>Using jQuery, we loaded our dataset from a JSON file. The data was then parsed to create a structured representation, where each station’s location was associated with its respective data points such as distance to the metro, quantity, and type.</li>
+</ul></li>
+<li><strong>Chart Initialization and Configuration:</strong>
+<ul>
+<li>Two ECharts instances were created for the map (<code>mapChart</code>) and the scatter plot (<code>scatterChart</code>).</li>
+<li>The map visualization utilized a GeoJSON of the relevant city areas to plot the station locations.</li>
+<li>The scatter plot was designed to display the log-normalized number of stations and their distance to the nearest metro station. Different types of locations were color-coded for better differentiation.</li>
+</ul></li>
+<li><strong>Data Grouping and Representation:</strong>
+<ul>
+<li>The data was grouped by location type to facilitate comparative analysis across different categories.</li>
+<li>Each group’s data was represented as a series in the scatter plot, with individual data points reflecting the number of stations and their metro proximity.</li>
+</ul></li>
+<li><strong>Interactivity and Responsiveness:</strong>
+<ul>
+<li>Click events on the map trigger updates in the scatter plot, showing data corresponding to the selected area.</li>
+<li>The scatter plot dynamically adjusts its display based on the selected map region, providing an interactive experience that allows users to explore data in specific city areas.</li>
+</ul></li>
+<li><strong>Styling and Customization:</strong>
+<ul>
+<li>We customized the styling of the map and scatter plot for clarity and ease of use. This included adjustments to the layout, color schemes, labels, and tooltips to enhance user interaction and data comprehension.</li>
+</ul></li>
+</ol>
+<p>Through these methodological steps, we successfully developed an interactive visualization tool that enables users to explore the distribution and characteristics of Emergency Sanitary Pad Stations across different city areas. This tool not only presents the data in an engaging and informative manner but also allows for an in-depth analysis of the availability and accessibility of these crucial facilities.</p>
+<!--  
 
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
 
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data frame</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">quantity =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">17</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">18</span>, <span class="dv">7</span>, <span class="cn">NA</span>, <span class="dv">28</span>, <span class="dv">4</span>, <span class="dv">17</span>, <span class="dv">9</span>, <span class="dv">5</span>, <span class="dv">23</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">6</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">35</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="cn">NA</span>),</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">distance_to_metro =</span> <span class="fu">c</span>(<span class="dv">126</span>, <span class="dv">159</span>, <span class="dv">274</span>, <span class="dv">814</span>, <span class="dv">1700</span>, <span class="dv">574</span>, <span class="dv">110</span>, <span class="dv">109</span>, <span class="dv">435</span>, <span class="dv">473</span>, <span class="dv">1300</span>, <span class="dv">1200</span>, <span class="dv">1600</span>, <span class="dv">1500</span>, <span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">697</span>, <span class="dv">798</span>, <span class="dv">1000</span>, <span class="dv">767</span>, <span class="dv">876</span>, <span class="dv">766</span>, <span class="dv">488</span>, <span class="dv">2000</span>, <span class="dv">1200</span>, <span class="dv">3000</span>, <span class="dv">386</span>, <span class="dv">273</span>, <span class="dv">860</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">29</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Min-Max Normalization</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>df_minmax <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">lapply</span>(data, <span class="cf">function</span>(x) <span class="fu">ifelse</span>(<span class="fu">is.na</span>(x), <span class="cn">NA</span>, <span class="fu">rescale</span>(x))))</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardization (Z-score normalization)</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>df_standardized <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">scale</span>(data))</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Log Transformation - Handling NA values</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>df_log <span class="ot">&lt;-</span> data</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>df_log<span class="sc">$</span>quantity <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(df_log<span class="sc">$</span>quantity), <span class="cn">NA</span>, <span class="fu">log</span>(df_log<span class="sc">$</span>quantity <span class="sc">+</span> <span class="dv">1</span>))</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>df_log<span class="sc">$</span>distance_to_metro <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(df_log<span class="sc">$</span>distance_to_metro), <span class="cn">NA</span>, <span class="fu">log</span>(df_log<span class="sc">$</span>distance_to_metro <span class="sc">+</span> <span class="dv">1</span>))</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new workbook</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>wb <span class="ot">&lt;-</span> <span class="fu">createWorkbook</span>()</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Add sheets and write data to each sheet</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="fu">addWorksheet</span>(wb, <span class="st">"Min-Max Normalization"</span>)</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="at">sheet =</span> <span class="st">"Min-Max Normalization"</span>, df_minmax)</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="fu">addWorksheet</span>(wb, <span class="st">"Standardization"</span>)</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="at">sheet =</span> <span class="st">"Standardization"</span>, df_standardized)</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="fu">addWorksheet</span>(wb, <span class="st">"Log Transformation"</span>)</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="at">sheet =</span> <span class="st">"Log Transformation"</span>, df_log)</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the workbook as an Excel file</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"NormalizedData.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Provide insights and trends identified from the interactive plot.</p>
+# Introduction
+## Background and Purpose
+Introduce the necessity of emergency sanitary pad stations in urban areas, referencing the importance of accessibility and public health.
+
+## Scope of the Study
+Define the geographical and demographic scope of your research. （可提及主要的两个部分，一个是可视化，一个是小程序那里under development的那个设备，太阳能那个，提第二点时提我们有算一些东西）
+
+# Methodology
+
+## Data Collection
+Outline the methods used to gather data on sanitary pad dispensers, including any surveys, field studies, or database analyses.
+
+## Interactive Plot Explanation
+Describe how the interactive plot was developed and how it visualizes the data.
+
+# Analysis of Current Situation
+## Distribution of Dispensers
+Present findings on the number and locations of sanitary pad dispensers across different districts.
+
+## Accessibility and Visibility
+Assess how accessible and visible these stations are to the public.
+
+# Comparative Study
+## Benchmarking
+Compare the availability of sanitary pad dispensers in your study area with other cities or standards, if applicable.
+
+## Lessons from Previous Studies
+Reference the "育婴室" (baby care rooms) study as a benchmark or point of comparison.
+
+# Interactive Plot Section
+## Data Visualization
+Present the interactive plot showing the distribution of sanitary pad dispensers.
+
+## Interpretation of Data
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Load necessary libraries
+library(dplyr)
+```
+
+::: {.cell-output .cell-output-stderr}
+```
+
+Attaching package: 'dplyr'
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+The following objects are masked from 'package:stats':
+
+    filter, lag
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+```
+:::
+
+```{.r .cell-code}
+library(scales)
+
+# Create data frame
+data <- data.frame(
+  quantity = c(3, 1, 17, 10, NA, 18, 7, NA, 28, 4, 17, 9, 5, 23, 7, 5, 3, 6, NA, NA, 6, NA, NA, 35, 6, 3, 6, 5, NA),
+  distance_to_metro = c(126, 159, 274, 814, 1700, 574, 110, 109, 435, 473, 1300, 1200, 1600, 1500, 1000, 1200, 697, 798, 1000, 767, 876, 766, 488, 2000, 1200, 3000, 386, 273, 860),
+  score = 1:29
+)
+
+# Min-Max Normalization
+df_minmax <- as.data.frame(lapply(data, function(x) ifelse(is.na(x), NA, rescale(x))))
+
+# Standardization (Z-score normalization)
+df_standardized <- as.data.frame(scale(data))
+
+# Log Transformation - Handling NA values
+df_log <- data
+df_log$quantity <- ifelse(is.na(df_log$quantity), NA, log(df_log$quantity + 1))
+df_log$distance_to_metro <- ifelse(is.na(df_log$distance_to_metro), NA, log(df_log$distance_to_metro + 1))
+
+
+library(openxlsx)
+
+# Create a new workbook
+wb <- createWorkbook()
+
+# Add sheets and write data to each sheet
+addWorksheet(wb, "Min-Max Normalization")
+writeData(wb, sheet = "Min-Max Normalization", df_minmax)
+
+addWorksheet(wb, "Standardization")
+writeData(wb, sheet = "Standardization", df_standardized)
+
+addWorksheet(wb, "Log Transformation")
+writeData(wb, sheet = "Log Transformation", df_log)
+
+# Save the workbook as an Excel file
+saveWorkbook(wb, "NormalizedData.xlsx", overwrite = TRUE)
+```
+:::
+
+
+
+
+Provide insights and trends identified from the interactive plot.
+
+
+
+
+
+
+# Challenges and Limitations
+## Identify Challenges
+Discuss any challenges faced in locating and assessing the sanitary pad stations.
+
+## Study Limitations
+Address any limitations of your research methods or data.
+
+# Recommendations and Future Work
+## Improving Accessibility
+Suggest ways to increase the accessibility and number of sanitary pad stations.
+
+## Policy Recommendations
+Propose policy or public health recommendations based on your findings.
+
+# Conclusion
+## Summary of Findings
+Concisely recap the key findings and insights from your study.
+
+## Closing Remarks
+Reflect on the importance of sanitary pad accessibility in urban areas.
+
+# References
+List of Sources: Include all the references and data sources used in your study.
+
+-->
 </section>
 </section>
-<section id="challenges-and-limitations" class="level1">
-<h1>Challenges and Limitations</h1>
-<section id="identify-challenges" class="level2">
-<h2 class="anchored" data-anchor-id="identify-challenges">Identify Challenges</h2>
-<p>Discuss any challenges faced in locating and assessing the sanitary pad stations.</p>
 </section>
-<section id="study-limitations" class="level2">
-<h2 class="anchored" data-anchor-id="study-limitations">Study Limitations</h2>
-<p>Address any limitations of your research methods or data.</p>
-</section>
-</section>
-<section id="recommendations-and-future-work" class="level1">
-<h1>Recommendations and Future Work</h1>
-<section id="improving-accessibility" class="level2">
-<h2 class="anchored" data-anchor-id="improving-accessibility">Improving Accessibility</h2>
-<p>Suggest ways to increase the accessibility and number of sanitary pad stations.</p>
-</section>
-<section id="policy-recommendations" class="level2">
-<h2 class="anchored" data-anchor-id="policy-recommendations">Policy Recommendations</h2>
-<p>Propose policy or public health recommendations based on your findings.</p>
-</section>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<section id="summary-of-findings" class="level2">
-<h2 class="anchored" data-anchor-id="summary-of-findings">Summary of Findings</h2>
-<p>Concisely recap the key findings and insights from your study.</p>
-</section>
-<section id="closing-remarks" class="level2">
-<h2 class="anchored" data-anchor-id="closing-remarks">Closing Remarks</h2>
-<p>Reflect on the importance of sanitary pad accessibility in urban areas.</p>
-</section>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
-<p>List of Sources: Include all the references and data sources used in your study.</p>
 </section>
 
 </main>
