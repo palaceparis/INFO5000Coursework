@@ -177,9 +177,6 @@ saveWorkbook(wb, "NormalizedData.xlsx", overwrite = TRUE)
 
 Provide insights and trends identified from the interactive plot.
 
-
-
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
