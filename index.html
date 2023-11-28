@@ -150,9 +150,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#survey-result-interpretation" id="toc-survey-result-interpretation" class="nav-link" data-scroll-target="#survey-result-interpretation">Survey Result Interpretation</a></li>
   <li><a href="#comparative-study---international-perspective" id="toc-comparative-study---international-perspective" class="nav-link" data-scroll-target="#comparative-study---international-perspective">Comparative Study - International Perspective</a></li>
   <li><a href="#free-menstrual-supplies-in-various-countries" id="toc-free-menstrual-supplies-in-various-countries" class="nav-link" data-scroll-target="#free-menstrual-supplies-in-various-countries">Free Menstrual Supplies in Various Countries</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a>
+  <ul class="collapse">
+  <li><a href="#survey-design" id="toc-survey-design" class="nav-link" data-scroll-target="#survey-design">Survey Design</a></li>
+  <li><a href="#vending-machine-iot-system" id="toc-vending-machine-iot-system" class="nav-link" data-scroll-target="#vending-machine-iot-system">Vending Machine IoT System</a></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
   <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work">Future Work</a>
   <ul class="collapse">
   <li><a href="#sustainable-vending-machine" id="toc-sustainable-vending-machine" class="nav-link" data-scroll-target="#sustainable-vending-machine">Sustainable Vending Machine</a></li>
@@ -495,11 +498,20 @@ Sanitary pad brand preference at HKUST(Guangzhou).
 </section>
 <section id="limitations" class="level2">
 <h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<section id="survey-design" class="level3">
+<h3 class="anchored" data-anchor-id="survey-design">Survey Design</h3>
 <p>Our survey design has limitations that might introduce bias. The framing of questions can lead to skewed results, and the absence of certain options may influence respondents’ choices. Additionally, acquiescence bias is a concern, particularly in questions about personal habits and preferences.</p>
 </section>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="vending-machine-iot-system" class="level3">
+<h3 class="anchored" data-anchor-id="vending-machine-iot-system">Vending Machine IoT System</h3>
+<p>We have consulted PhD professionals in IoT and an expert. The interaction flowchart of the vending machine IoT System is as shown below.</p>
+<figure style="text-align: center;" class="figure">
+<img src="assets/iot.png" width="40%" style="border: none; box-shadow: none; margin-bottom: 10px;" class="figure-img">
+<figcaption style="margin-top: 10px;" class="figure-caption">
+Interaction flowchart between Vending Machine and IoT System.
+</figcaption>
+</figure>
+<p>The process can be concluded as follows: After each sale of goods, vending machines report the type, quantity, time, and region of the sold goods to the Internet of Things platform. The Internet of Things platform provides rule engine capabilities, supporting the forwarding of data reported to other cloud services such as Huawei Cloud. It can achieve the forwarding of massive data to MapReduce Service (MRS) through Data Ingestion Service (DIS), After processing the data, it is read and presented as a visual report by the Data Lake Visualization (DLV), achieving one-stop data collection, processing, and analysis. # Conclusion</p>
 <p>Our project combined teamwork, innovative thinking, and effective resource utilization to address the availability of sanitary pads. Key accomplishments include:</p>
 <ul>
 <li>Development of an IoT vending machine prototype for emergency feminine product stations.</li>
@@ -508,6 +520,8 @@ Sanitary pad brand preference at HKUST(Guangzhou).
 <li>Proposal of policy recommendations aimed at tackling menstrual stigma and poverty.</li>
 </ul>
 <p>These initiatives are pivotal in promoting an inclusive and progressive environment in educational institutions, directly benefiting students and staff. Furthermore, they contribute to broader societal advancements in menstrual health and gender equality.</p>
+</section>
+</section>
 </section>
 <section id="future-work" class="level1">
 <h1>Future Work</h1>

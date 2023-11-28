@@ -229,8 +229,19 @@ _Table: Summary of Countries and Regions Providing Free Menstrual Supplies._
 
 ## Limitations
 
+### Survey Design
 Our survey design has limitations that might introduce bias. The framing of questions can lead to skewed results, and the absence of certain options may influence respondents' choices. Additionally, acquiescence bias is a concern, particularly in questions about personal habits and preferences.
 
+### Vending Machine IoT System
+We have consulted PhD professionals in IoT and an expert. The interaction flowchart of the vending machine IoT System is as shown below.
+
+
+<figure style="text-align: center;">
+    <img src="assets/iot.png" width="40%" style="border: none; box-shadow: none; margin-bottom: 10px;"/>
+    <figcaption style="margin-top: 10px;">Interaction flowchart between Vending Machine and IoT System.</figcaption>
+</figure>
+
+The process can be concluded as follows: After each sale of goods, vending machines report the type, quantity, time, and region of the sold goods to the Internet of Things platform. The Internet of Things platform provides rule engine capabilities, supporting the forwarding of data reported to other cloud services such as Huawei Cloud. It can achieve the forwarding of massive data to MapReduce Service (MRS) through Data Ingestion Service (DIS), After processing the data, it is read and presented as a visual report by the Data Lake Visualization (DLV), achieving one-stop data collection, processing, and analysis.
 # Conclusion
 
 Our project combined teamwork, innovative thinking, and effective resource utilization to address the availability of sanitary pads. Key accomplishments include:
