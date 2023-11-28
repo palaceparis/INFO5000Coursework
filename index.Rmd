@@ -86,6 +86,11 @@ This project addresses menstrual poverty and stigma in China. Approximately 40 m
     <figcaption style="margin-top: 10px;">Chinese women population health condition ratio. Source: MeiBuEr's website.</figcaption>
 </figure>
 
+
+[Competition Tape of the Project](https://hkustgz-my.sharepoint.com/:v:/g/personal/mgong081_connect_hkust-gz_edu_cn/EYUXlXYBPKpJqjOMFnNOF3UBvQWlqA0OGdIRkxSOm1osDg?e=mH1V1c).
+
+[Competition Tape of the Project 2](https://hkustgz-my.sharepoint.com/:v:/g/personal/mgong081_connect_hkust-gz_edu_cn/EZB8FnlVAVFAnZn_Q01VotoBq3AibBLNEU6i0GCQxXRFKA?e=HtgAgN).
+
 ### Preliminary Findings
 Our research highlights challenges in providing sanitary napkins in educational institutions, contrasting the availability of personal electronic charging stations and family planning supplies. A survey at Hong Kong University of Science and Technology (Guangzhou) indicated significant discomfort and stigma around discussing menstruation.
 
@@ -235,6 +240,7 @@ Our survey design has limitations that might introduce bias. The framing of ques
 ### Vending Machine IoT System
 We have consulted PhD professionals in IoT and an expert. The interaction flowchart of the vending machine IoT System is as shown below.
 
+[IOT System Demo](https://hkustgz-my.sharepoint.com/:v:/g/personal/mgong081_connect_hkust-gz_edu_cn/EY7chR4BbPhNltFOrgyMpqIBCfkH22MX90KZ3F_L2zHr4g?e=EUZFZ6)
 
 <figure style="text-align: center;">
     <img src="assets/iot.png" width="40%" style="border: none; box-shadow: none; margin-bottom: 10px;"/>
