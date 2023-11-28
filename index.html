@@ -228,7 +228,7 @@ body {
     display: block;
 }    
 </style>
-<p>This is the online version of our report for INFO5000 Coursework. This summary includes the basic structure and key findings of our study, which are:</p>
+<p>This is the online version of our report for INFO5000 Coursework. This report includes the basic structure and key findings of our study, which are:</p>
 <ul>
 <li>An interactive plot that identifies locations of emergency stations providing feminine hygiene products in Guangzhou, Shenzhen, Foshan, and Dongguan.</li>
 <li>Some survey results and analysis.</li>
@@ -519,81 +519,6 @@ Sanitary pad brand preference at HKUST(Guangzhou).
 <p>[14] “20 Places Around the World Where Governments Provide Free Period Products,” Global Citizen. Accessed: Nov.&nbsp;27, 2023. [Online]. Available: https://www.globalcitizen.org/en/content/free-period-products-countries-cities-worldwide/</p>
 <p>[15] “财政部答复代表提出的‘减免卫生巾增值税’’将卫生巾费用纳入医社保’等问题_婴童品牌网.” Accessed: Nov.&nbsp;27, 2023. [Online]. Available: http://www.ytpp.com.cn/data/2021-08-31/95791.html#tdsub</p>
 <p>[16] 马娟, “国务院办公厅关于印发国家贫困地区儿童发展规划（2014—2020年）的通知_妇女儿童_中国政府网.” Accessed: Nov.&nbsp;27, 2023. [Online]. Available: https://www.gov.cn/zhengce/content/2015-01/15/content_9398.htm#tdsub</p>
-<!-- 
-
-::: {.cell}
-
-```{.r .cell-code}
-# Load necessary libraries
-library(dplyr)
-```
-
-::: {.cell-output .cell-output-stderr}
-```
-
-Attaching package: 'dplyr'
-```
-:::
-
-::: {.cell-output .cell-output-stderr}
-```
-The following objects are masked from 'package:stats':
-
-    filter, lag
-```
-:::
-
-::: {.cell-output .cell-output-stderr}
-```
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-```
-:::
-
-```{.r .cell-code}
-library(scales)
-
-# Create data frame
-data <- data.frame(
-  quantity = c(3, 1, 17, 10, NA, 18, 7, NA, 28, 4, 17, 9, 5, 23, 7, 5, 3, 6, NA, NA, 6, NA, NA, 35, 6, 3, 6, 5, NA),
-  distance_to_metro = c(126, 159, 274, 814, 1700, 574, 110, 109, 435, 473, 1300, 1200, 1600, 1500, 1000, 1200, 697, 798, 1000, 767, 876, 766, 488, 2000, 1200, 3000, 386, 273, 860),
-  score = 1:29
-)
-
-# Min-Max Normalization
-df_minmax <- as.data.frame(lapply(data, function(x) ifelse(is.na(x), NA, rescale(x))))
-
-# Standardization (Z-score normalization)
-df_standardized <- as.data.frame(scale(data))
-
-# Log Transformation - Handling NA values
-df_log <- data
-df_log$quantity <- ifelse(is.na(df_log$quantity), NA, log(df_log$quantity + 1))
-df_log$distance_to_metro <- ifelse(is.na(df_log$distance_to_metro), NA, log(df_log$distance_to_metro + 1))
-
-
-library(openxlsx)
-
-# Create a new workbook
-wb <- createWorkbook()
-
-# Add sheets and write data to each sheet
-addWorksheet(wb, "Min-Max Normalization")
-writeData(wb, sheet = "Min-Max Normalization", df_minmax)
-
-addWorksheet(wb, "Standardization")
-writeData(wb, sheet = "Standardization", df_standardized)
-
-addWorksheet(wb, "Log Transformation")
-writeData(wb, sheet = "Log Transformation", df_log)
-
-# Save the workbook as an Excel file
-saveWorkbook(wb, "NormalizedData.xlsx", overwrite = TRUE)
-```
-:::
-
--->
 </section>
 
 </main>

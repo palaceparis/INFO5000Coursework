@@ -1,0 +1,42 @@
+```{r}
+# Load necessary libraries
+library(dplyr)
+library(scales)
+
+# Create data frame
+data <- data.frame(
+  quantity = c(3, 1, 17, 10, NA, 18, 7, NA, 28, 4, 17, 9, 5, 23, 7, 5, 3, 6, NA, NA, 6, NA, NA, 35, 6, 3, 6, 5, NA),
+  distance_to_metro = c(126, 159, 274, 814, 1700, 574, 110, 109, 435, 473, 1300, 1200, 1600, 1500, 1000, 1200, 697, 798, 1000, 767, 876, 766, 488, 2000, 1200, 3000, 386, 273, 860),
+  score = 1:29
+)
+
+# Min-Max Normalization
+df_minmax <- as.data.frame(lapply(data, function(x) ifelse(is.na(x), NA, rescale(x))))
+
+# Standardization (Z-score normalization)
+df_standardized <- as.data.frame(scale(data))
+
+# Log Transformation - Handling NA values
+df_log <- data
+df_log$quantity <- ifelse(is.na(df_log$quantity), NA, log(df_log$quantity + 1))
+df_log$distance_to_metro <- ifelse(is.na(df_log$distance_to_metro), NA, log(df_log$distance_to_metro + 1))
+
+
+library(openxlsx)
+
+# Create a new workbook
+wb <- createWorkbook()
+
+# Add sheets and write data to each sheet
+addWorksheet(wb, "Min-Max Normalization")
+writeData(wb, sheet = "Min-Max Normalization", df_minmax)
+
+addWorksheet(wb, "Standardization")
+writeData(wb, sheet = "Standardization", df_standardized)
+
+addWorksheet(wb, "Log Transformation")
+writeData(wb, sheet = "Log Transformation", df_log)
+
+# Save the workbook as an Excel file
+saveWorkbook(wb, "NormalizedData.xlsx", overwrite = TRUE)
+```
