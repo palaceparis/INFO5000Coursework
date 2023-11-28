@@ -63,7 +63,7 @@ This is the online version of our report for INFO5000 Coursework. This report in
 - An interactive plot that identifies locations of emergency stations providing feminine hygiene products in Guangzhou, Shenzhen, Foshan, and Dongguan.
 - Some survey results and analysis.
 
-For more detailed information and in-depth analysis, please refer to our full report [here on GitHub](<GitHub Link>).
+For more detailed information and in-depth analysis, please refer to our full report [here on GitHub](https://github.com/palaceparis/INFO5000Coursework/blob/main/INFO5000FullReport.pdf).
 
 # Abstract
 
@@ -266,14 +266,13 @@ We are developing a solar-powered off-grid vending machine. The main components 
 
 ```{=html}
 <div style="text-align: center;">
-    <figure style="display: inline-block; margin-right: 20px;">
-        <img src="assets/off_grid.jpg" alt="The schematic diagram of the solar off-grid power generation system" width="300px" style="border: none; box-shadow: none; margin-bottom: 10px;"/>
-        <figcaption style="margin-top: 10px;">The schematic diagram of the solar off-grid power generation system.</figcaption>
-    </figure>
-
     <figure style="display: inline-block;">
         <img src="assets/solar_panel.jpg" alt="The structure of the solar panel" width="300px" style="border: none; box-shadow: none; margin-bottom: 10px;"/>
         <figcaption style="margin-top: 10px;">The structure of the solar panel.</figcaption>
+    </figure>
+    <figure style="display: inline-block; margin-right: 20px;">
+        <img src="assets/off_grid.jpg" alt="The schematic diagram of the solar off-grid power generation system" width="300px" style="border: none; box-shadow: none; margin-bottom: 10px;"/>
+        <figcaption style="margin-top: 10px;">The schematic diagram of the solar off-grid power generation system.</figcaption>
     </figure>
 </div>
 ```
