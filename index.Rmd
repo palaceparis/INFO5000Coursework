@@ -39,6 +39,23 @@ body {
 .figure {
     display: block;
 }    
+
+
+.scrolling-gallery {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scrolling-gallery img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+
+
+
 </style>
 
 This is the online version of our report for INFO5000 Coursework. This report includes the basic structure and key findings of our study, which are:
@@ -132,6 +149,40 @@ This methodology enabled us to create an interactive tool for exploring the dist
 
 
 # Results
+
+## A Glimpse of Existing Padding Stations
+
+```{=html}
+<div class="scrolling-gallery">
+<img src="assets/stations/佛山-德胜学校-互助盒.png" alt="佛山-德胜学校-互助盒" width="30%">
+<img src="assets/stations/东莞-东莞中学-互助盒.jpg" alt="东莞-东莞中学-互助盒" width="30%">
+<img src="assets/stations/佛山-佛山科学技术学院-互助盒.jpg" alt="佛山-佛山科学技术学院-互助盒" width="30%">
+<img src="assets/stations/佛山-清晖园1.JPG" alt="佛山-清晖园1" width="30%">
+<img src="assets/stations/佛山-清晖园2.JPG" alt="佛山-清晖园2" width="30%">
+<img src="assets/stations/佛山-清晖园3.JPG" alt="佛山-清晖园3" width="30%">
+<img src="assets/stations/佛山-清晖园4.JPG" alt="佛山-清晖园4" width="30%">
+<img src="assets/stations/佛山-清晖园5.JPG" alt="佛山-清晖园5" width="30%">
+<img src="assets/stations/佛山-清晖园6.JPG" alt="佛山-清晖园6" width="30%">
+<img src="assets/stations/广州-中山大学（东校区）-互助盒.png" alt="广州-中山大学（东校区）-互助盒" width="30%">
+<img src="assets/stations/广州-华南农业大学-互助盒.jpg" alt="广州-华南农业大学-互助盒" width="30%">
+<img src="assets/stations/广州-华南师范大学（石牌校区）-互助盒.jpg" alt="广州-华南师范大学（石牌校区）-互助盒" width="30%">
+<img src="assets/stations/广州-华南理工大学-互助盒.jpg" alt="广州-华南理工大学-互助盒" width="30%">
+<img src="assets/stations/广州-太古汇-大黄鹅-价格.PNG" alt="广州-太古汇-大黄鹅-价格" width="30%">
+<img src="assets/stations/广州-太古汇-大黄鹅1.JPG" alt="广州-太古汇-大黄鹅1" width="30%">
+<img src="assets/stations/广州-太古汇-大黄鹅2.JPG" alt="广州-太古汇-大黄鹅2" width="30%">
+<img src="assets/stations/广州-广东外语外贸大学（北校区）-互助盒.jpg" alt="广州-广东外语外贸大学（北校区）-互助盒" width="30%">
+<img src="assets/stations/广州-广东工业大学-互助盒.jpg" alt="广州-广东工业大学-互助盒" width="30%">
+<img src="assets/stations/广州-广东科学技术职业学院-互助盒.jpg" alt="广州-广东科学技术职业学院-互助盒" width="30%">
+<img src="assets/stations/广州-广东药科大学-互助盒.jpg" alt="广州-广东药科大学-互助盒" width="30%">
+<img src="assets/stations/广州-广东财经大学-互助盒.jpg" alt="广州-广东财经大学-互助盒" width="30%">
+<img src="assets/stations/广州-广东金融学院-卫生巾互助盒.jpg" alt="广州-广东金融学院-卫生巾互助盒" width="30%">
+<img src="assets/stations/广州-暨南大学石牌楼校区-互助盒.png" alt="广州-暨南大学石牌楼校区-互助盒" width="30%">
+<img src="assets/stations/广州-置地广场-女生盒子.jpeg" alt="广州-置地广场-女生盒子" width="30%">
+<img src="assets/stations/深圳-所有商场-飞么.webp" alt="深圳-所有商场-飞么" width="30%">
+``
+
+</div>
+```
 
 ## Survey Result Interpretation
 
