@@ -21,14 +21,18 @@
         flex: 1; /* Flex property to adjust the size of children */
       }
       #mapContainer {
-        width: 800px;
-        height: 350px;
-        /* margin-left: -160px; */
+        width: 700px;
+        height: 300px;
+        transform: scale(1.7);
+        margin-top: 100px;
+        margin-left: 0em;
       }
       #scatterContainer {
-        width: 10px;
+        width: 0px;
         height: 300px;
-        margin-left: -90px;
+        margin-left: 51px;
+        transform: scale(1);
+        margin-top: 100px;
       }
     </style>
   </head>
@@ -208,7 +212,7 @@
             // Map option
             mapOption = {
               title: {
-                text: "Map of Guangdong, Shenzhen, Foshan, and Dongguan",
+                text: "Map of Guangzhou, Shenzhen, Foshan, and Dongguan",
                 left: "center", // Centers the title
                 top: "top", // Positions the title at the top of the chart
                 textStyle: {

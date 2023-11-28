@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      .cover {
+        background-image: url("assets/woman.jpg");
+        min-height: 100vh; /* Ensures the div takes at least the full view height */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Prevents any content from extending beyond this div */
+      }
+      .frtitle,
+      .group-info,
+      .frdate {
+        margin: 0px;
+        padding: 10px;
+        text-align: center;
+        margin-left: 400px; /* Center align these elements */
+        margin-right: 100px; /* Center align these elements */
+        font-weight: bold;
+        opacity: 0.8;
+      }
+      .frtitle {
+        color: #835454;
+        background: #f0c3c3; /* Semi-transparent background for readability */
+        font-size: 45px;
+        border-radius: 38px;
+      }
+      .group-info {
+        color: #2f2727;
+        font-size: 20px;
+        border-radius: 18px;
+      }
+      .frbottom {
+        position: absolute; /* Absolute positioning */
+        bottom: 0; /* Align to the bottom */
+        width: 100%; /* Full width */
+        text-align: center;
+        background: #edd5d5; /* Semi-transparent white background */
+        padding: 8px 0;
+        font-size: 13px;
+        color: #2f2727;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover">
+      <!-- Title Section -->
+      <div class="frtitle">
+        Finding Emergency Sanitary Pad Stations in City Corners
+        (寻找城市角落的紧急卫生巾站)
+      </div>
+
+      <!-- Group Information -->
+      <div class="group-info">
+        @Group 1: Nan ZHU, Zixuan YU, Yiyu LIU, Tianyi CHEN, Zeying GONG, Mingze
+        GONG
+      </div>
+      <!-- Bottom Information -->
+      <div class="frbottom">INFO5000 Coursework for 2023 Fall Semester</div>
+    </div>
+  </body>
+</html>
