@@ -1,6 +1,6 @@
 ---
 title: "Finding Emergency Sanitary Pad Stations in City Corners (寻找城市角落的紧急卫生巾站)"
-author: "Group 1: Nan ZHU, Zixuan YU, Yiyu LIU, Tianyi CHEN, Zeying GONG, Mingze GONG."
+author: "Group 1: Nan ZHU, Zixuan YU, Yiyu LIU, <br>Tianyi CHEN, Zeying GONG, Mingze GONG."
 date: "`r Sys.Date()`"
 format:
   bookup-html:
@@ -8,7 +8,6 @@ format:
     toc-depth: 3
     include-in-header:
       - file: front_page.html
-
 ---
 <style>
 .level1 {
@@ -108,6 +107,9 @@ We analyzed the Weibo database using keywords like "sanitary pad self-service bo
 A survey was developed to understand the community's attitudes towards the availability and affordability of sanitary pads at HKUST(GZ). We used a Stratified Random Sampling approach for a diverse sample.
 
 ## Interactive Visualization Map Design
+
+<iframe src="plot.html" width="90%" height="550em"></iframe>
+
 We utilized a dataset detailing locations of Emergency Sanitary Pad Stations, transforming the data into geographical coordinates for analysis. The interactive visualization can be accessed at [https://palaceparis.github.io/INFO5000Coursework/](https://palaceparis.github.io/INFO5000Coursework/).
 
 ### Data Transformation
