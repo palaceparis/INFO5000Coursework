@@ -1,6 +1,6 @@
 ---
-title: "Finding Emergency Sanitary Pad Stations in City Corners (寻找城市角落的紧急卫生巾站)"
-author: "Group 1: Nan ZHU, Zixuan YU, Yiyu LIU, <br>Tianyi CHEN, Zeying GONG, Mingze GONG."
+title: "Sustainable Smart Life Competition"
+author: "The Sunbox Team"
 date: "`r Sys.Date()`"
 format:
   bookup-html:
