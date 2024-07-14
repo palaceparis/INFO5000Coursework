@@ -1,6 +1,6 @@
 ---
-title: "Sustainable Smart Life Competition"
-author: "The Sunbox Team"
+title: "Finding Emergency Sanitary Pad Stations in City Corners 寻找城市角落的卫生巾站"
+author: "自在月行FreePeriod"
 date: "`r Sys.Date()`"
 format:
   bookup-html:
